@@ -1,0 +1,6 @@
+{
+    "java.project.outputPath": "webapps\\practica\\WEB-INF\\classes",
+    "java.project.sourcePaths": [
+        "webapps\\practica\\WEB-INF\\src"
+    ]
+}

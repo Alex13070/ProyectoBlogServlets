@@ -1,0 +1,29 @@
+<web-app>
+   <servlet>
+      <servlet-name>instalador</servlet-name>      
+      <servlet-class>practica.Instalador</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>instalador</servlet-name>
+      <url-pattern>/instalador</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+     <servlet-name>cerrar</servlet-name>      
+     <servlet-class>practica.Cerrar</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>cerrar</servlet-name>
+      <url-pattern>/cerrar</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+     <servlet-name>iniciosesion</servlet-name>      
+     <servlet-class>practica.InicioSesion</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>iniciosesion</servlet-name>
+      <url-pattern>/iniciosesion</url-pattern>
+   </servlet-mapping>
+
+</web-app>
