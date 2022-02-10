@@ -34,7 +34,5 @@ public class Borrar extends HttpServlet {
         else
             resp.sendRedirect(req.getContextPath() + "/blog");
 
-
-        
     }
 }

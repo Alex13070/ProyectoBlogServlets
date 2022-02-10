@@ -45,8 +45,6 @@ public class DB {
     public void crearTabla(String sql) {
         Connection conn = null;
         try {
-    
-            
             conn = DriverManager.getConnection(URL);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -460,4 +458,6 @@ public class DB {
         return exito;
 
     }
+
+
 }

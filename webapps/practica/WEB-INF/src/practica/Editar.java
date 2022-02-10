@@ -29,18 +29,23 @@ public class Editar extends HttpServlet {
 
         if(session != null){
             Integer id = (Integer) session.getAttribute("id");
-            DB db = new DB ();
-
-            Optional<Entrada> e = db.buscarEntrada(id);
             
-            if (e.isPresent()) {
-                Entrada entrada = e.get();
+            if (id != null) {
                 
-                entrada.setTitulo(extraerCaracteres(entrada.getTitulo()));
-                entrada.setTexto(extraerCaracteres(entrada.getTexto()));
+                DB db = new DB ();
+
+                Optional<Entrada> e = db.buscarEntrada(id);
+                
+                if (e.isPresent()) {
+                    Entrada entrada = e.get();
+                    
+                    entrada.setTitulo(extraerCaracteres(entrada.getTitulo()));
+                    entrada.setTexto(extraerCaracteres(entrada.getTexto()));
+                }
             }
-            
-            
+            else {
+                //Editor vacio
+            }
 
             //nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");
         }
