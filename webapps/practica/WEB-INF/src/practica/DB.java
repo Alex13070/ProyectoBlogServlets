@@ -11,10 +11,15 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+/**
+ *  @author @Alex13070
+ *  
+ *  Clase para el manejo de la base de datos
+ */
 public class DB {
 
     /**
-     * URL de la base de datos.
+     * Base de datos
      */
     private final String URL = "jdbc:sqlite:blog.db";
 
@@ -371,7 +376,12 @@ public class DB {
             }
         }
     }
-
+    /**
+     * Busqueda de una entrada en la base de datos
+     * @param id Clave primaria de la entrada precisada para la busqueda
+     * @return En caso de que no se encuentre la entrada, se devolvera un Optional.empty(), en caso contrario 
+     *         se te devolvera un usuario encapsulado.
+     */
     public Optional<Entrada> buscarEntrada(Integer id) {
 
         Optional<Entrada> entrada = Optional.empty();
@@ -415,7 +425,12 @@ public class DB {
 
     }
 
-
+    /**
+     * Borrado de usuarios de la base de datos.
+     * @param id Clave primaria de entrada en la base de datos.
+     * @return {@code true} Exito del borrado de la entrada.
+     *         {@code false} Fracaso del borrado de la entrada.
+     */
     public boolean borrarEntrada(Integer id) {
         boolean exito = false;
         Connection conn = null;
