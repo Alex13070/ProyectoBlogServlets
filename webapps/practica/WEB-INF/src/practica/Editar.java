@@ -15,12 +15,12 @@ import javax.servlet.http.HttpSession;
  * Servlet dedicado a editar entradas en el servidor
  */
 public class Editar extends HttpServlet {
-
+/*
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
     }
-
+*/
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //String nombreUsuarioPagina = "Sin registrar";
@@ -28,13 +28,13 @@ public class Editar extends HttpServlet {
         HttpSession session = req.getSession(false);
 
         if(session != null){
-            Integer id = (Integer) session.getAttribute("id");
+            String id = (req.getParameter("id"));
             
             if (id != null) {
                 
                 DB db = new DB ();
 
-                Optional<Entrada> e = db.buscarEntrada(id);
+                Optional<Entrada> e = db.buscarEntrada(Integer.parseInt(id));
                 
                 if (e.isPresent()) {
                     Entrada entrada = e.get();
@@ -44,7 +44,7 @@ public class Editar extends HttpServlet {
                 }
             }
             else {
-                //Editor vacio
+                resp.sendRedirect(req.getContextPath() + "/panelcontrol");
             }
 
             //nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");

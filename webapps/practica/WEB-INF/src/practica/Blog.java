@@ -2,14 +2,14 @@ package practica;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.stringtemplate.v4.ST;
 
 /**
  * @author @Alex13070
@@ -18,6 +18,10 @@ import org.stringtemplate.v4.ST;
  */
 public class Blog extends HttpServlet {
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,9 +34,12 @@ public class Blog extends HttpServlet {
             session.getAttribute("nombreUsuario");
         }
         DB db = new DB ();
-        ST template = PlantillasHTML.paginaPrincipal(db.getEntradas(), nombreUsuarioPagina);
 
-        out.println(template.render().toString());
+        List<Entrada> entradas = db.getEntradas();
+
+        entradas.removeIf(e -> e.getFecha().getTime() > new Date ().getTime());
+
+        out.println(PlantillasHTML.paginaPrincipal(entradas, nombreUsuarioPagina, "Blog - Pagina principal"));
     }
     
 }

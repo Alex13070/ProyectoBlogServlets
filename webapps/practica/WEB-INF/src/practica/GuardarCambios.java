@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * 
  * Servlet para actualizar las entradas.
  */
-public class GurardarCambios extends HttpServlet {
+public class GuardarCambios extends HttpServlet {
 
     /**
      * Formato para hacer el parseo de las fechas
@@ -35,6 +35,7 @@ public class GurardarCambios extends HttpServlet {
             String titulo = req.getParameter("titulo");
             String texto = req.getParameter("texto");
             String f = req.getParameter("fecha");
+            
             Date fecha = new Date();
             try {
                 fecha = FORMATTER.parse(f);

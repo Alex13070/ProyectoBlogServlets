@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.stringtemplate.v4.ST;
 
 /**
  * @author @Alex13070
@@ -28,17 +27,6 @@ public class Panel extends HttpServlet {
         if (session != null) {
             DB db = new DB ();
             nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");
-
-            ST template = PlantillasHTML.plantillaBasePaginaWeb();
-
-            StringBuffer buffer = new StringBuffer();
-
-
-            buffer.append(PlantillasHTML.formCambiarPassword());
-            buffer.append(PlantillasHTML.listaEntradas(db.getEntradas()));
-
-            template.add("cuerpo", buffer.toString());
-            template.add("nombreUsuario", nombreUsuarioPagina);
 
             String psw = req.getParameter("nombreUsuario");
             String psw2 = req.getParameter("password");
@@ -63,7 +51,7 @@ public class Panel extends HttpServlet {
 
             }          
 
-            out.println(buffer.toString());
+            out.println(PlantillasHTML.paginaPanelControl("Blog - Panel de control", nombreUsuarioPagina, db.getEntradas()));
 
         }
         else

@@ -304,6 +304,7 @@ public class DB {
             }
         }
 
+
         return entradas;
 
     }
@@ -403,12 +404,14 @@ public class DB {
                         e.setId(cursor.getInt(1));
                         e.setTitulo(cursor.getString(2));
                         e.setTexto(cursor.getString(3));
+
                         Date date = new Date();
-                        date.setTime(cursor.getInt(4));
+
+                        date.setTime(cursor.getLong(4));
+
                         e.setFecha(date);
 
                         entrada = Optional.of(e);
-                        conn.commit();
                     }
                 }
 

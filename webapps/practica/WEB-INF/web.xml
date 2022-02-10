@@ -26,4 +26,13 @@
       <url-pattern>/iniciosesion</url-pattern>
    </servlet-mapping>
 
+   <servlet>
+      <servlet-name>blog</servlet-name>      
+      <servlet-class>practica.Blog</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>blog</servlet-name>
+      <url-pattern>/blog</url-pattern>
+   </servlet-mapping>
+
 </web-app>

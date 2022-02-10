@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.stringtemplate.v4.ST;
-
 /**
  * @author @Alex13070
  * 
@@ -62,14 +60,8 @@ public class InicioSesion extends HttpServlet{
             //Sesion ya iniciada
             resp.sendRedirect(req.getContextPath() + "/panel");
         }
+    
 
-        ST template = PlantillasHTML.plantillaBasePaginaWeb();
-
-        template.add("usuario", nombreUsuarioPagina);
-        template.add("cuerpo", PlantillasHTML.formInicioSesion().render().toString());
-        
-
-
-        out.println(template.render().toString());
+        out.println(PlantillasHTML.paginaInicioSesion("Blog - Inicio de sesi&oacute;n", nombreUsuarioPagina));
     }
 }
