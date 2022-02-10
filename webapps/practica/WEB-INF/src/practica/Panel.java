@@ -27,6 +27,7 @@ public class Panel extends HttpServlet {
         PrintWriter out = resp.getWriter();
         //String mostrar = "";
         HttpSession session = req.getSession(false);
+        Optional<String> info = Optional.empty();
 
         if (session != null) {
             DB db = new DB ();
@@ -47,15 +48,17 @@ public class Panel extends HttpServlet {
                         .build();
 
                     db.cambiarPassword(u);
+                    info = Optional.of("Cambio de contrase&nacute;a correcto");
                 }
                 else {
                     //Erroneo
                     //Mensaje de error
+                    info = Optional.of("Error: Las contrase&nacute;a no coincide");
                 }
 
             }          
 
-            out.println(PlantillasHTML.paginaPanelControl("Blog - Panel de control", nombreUsuarioPagina, db.getEntradas(), Optional.empty()));
+            out.println(PlantillasHTML.paginaPanelControl("Blog - Panel de control", nombreUsuarioPagina, db.getEntradas(), info));
 
         }
         else
