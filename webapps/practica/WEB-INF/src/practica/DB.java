@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Date;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,28 +13,35 @@ import java.sql.ResultSet;
 
 public class DB {
 
-    private static boolean activo = false;
     /**
      * URL de la base de datos.
      */
-    private final static String URL = "jdbc:sqlite:blog.db";
+    private final String URL = "jdbc:sqlite:blog.db";
 
     /**
      * Clase a instanciar para acceder a la base de datos.
      */
-    private final static String CLASE = "org.sqlite.JDBC";
+    private final String CLASE = "org.sqlite.JDBC";
+
+
+    public DB() {
+        try {
+            Class.forName(CLASE).getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            System.err.println("Error al crear los drivers de la base de datos.");
+        }
+    }
 
     /**
      * Funcion para crear tablas en la base de datos.
      * 
      * @param sql Codigo sql de la tabla.
      */
-    public static void crearTabla(String sql) {
+    public void crearTabla(String sql) {
         Connection conn = null;
         try {
-            if (!activo) {
-                Class.forName(CLASE).getDeclaredConstructor().newInstance();
-            }
+    
+            
             conn = DriverManager.getConnection(URL);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -55,13 +63,7 @@ public class DB {
     /**
      * Funcion para crear las tablas en la clase instalador
      */
-    public static void crearTablas() {
-
-        try {
-            Class.forName(CLASE).getDeclaredConstructor().newInstance();
-        } catch (Exception e) {
-            System.out.println("Error en la instanciacion de la clase de la creacion de la base de datos");
-        }
+    public void crearTablas() {
 
         crearTabla(
                 """
@@ -112,12 +114,11 @@ public class DB {
      * @return {@code true} Exito de la operacion
      *         {@code false} Fracaso de la operacion
      */
-    public static boolean crearUsuario(Usuario usuario) {
+    public boolean crearUsuario(Usuario usuario) {
 
         boolean exito = false;
         Connection conn = null;
         try {
-            // Class.forName(CLASE).getDeclaredConstructor().newInstance();
             conn = DriverManager.getConnection(URL);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -130,6 +131,7 @@ public class DB {
                     pstmt.setString(1, usuario.getUsuario());
                     pstmt.setString(2, usuario.getPassword());
                     pstmt.executeUpdate();
+                    conn.commit();
                     exito = true;
 
                 }
@@ -150,11 +152,10 @@ public class DB {
      * @return {@code true} Exito de la operacion
      *         {@code false} Fracaso de la operacion
      */
-    public static boolean crearEntrada(Entrada entrada) {
+    public boolean crearEntrada(Entrada entrada) {
         boolean exito = false;
         Connection conn = null;
         try {
-            // Class.forName(CLASE).getDeclaredConstructor().newInstance();
             conn = DriverManager.getConnection(URL);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -167,7 +168,7 @@ public class DB {
                     pstmt.setString(2, entrada.getTexto());
                     pstmt.setLong(3, entrada.getFecha().getTime());
                     pstmt.executeUpdate();
-
+                    conn.commit();
                     exito = true;
                 }
                 // Se cierra la conexión con la base de datos
@@ -187,11 +188,10 @@ public class DB {
      * @return {@code true} si los datos son correctos
      *         {@code false} si los datos no son correctos
      */
-    public static boolean comprobarUsuario(Usuario usuario) {
+    public boolean comprobarUsuario(Usuario usuario) {
         boolean exito = false;
         Connection conn = null;
         try {
-            // Class.forName(CLASE).getDeclaredConstructor().newInstance();
             conn = DriverManager.getConnection(URL);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -229,11 +229,10 @@ public class DB {
      * @return {@code true} si el usuario existe
      *         {@code false} si el usuario no existe
      */
-    public static boolean existeUsuario(String usuario) {
+    public boolean existeUsuario(String usuario) {
         boolean exito = false;
         Connection conn = null;
         try {
-            // Class.forName(CLASE).getDeclaredConstructor().newInstance();
             conn = DriverManager.getConnection(URL);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -266,12 +265,11 @@ public class DB {
      * 
      * @return Lista de entradas.
      */
-    public static List<Entrada> getEntradas() {
+    public List<Entrada> getEntradas() {
 
         List<Entrada> entradas = new ArrayList<Entrada>();
         Connection conn = null;
         try {
-            // Class.forName(CLASE).getDeclaredConstructor().newInstance();
             conn = DriverManager.getConnection(URL);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -314,14 +312,10 @@ public class DB {
      * @return {@code true} Si se ha podido actualizar el usuario correctamente
      *         {@code false} Si no se ha podido actualizar el usuario
      */
-    public static boolean cambiarPassword(Usuario usuario) {
+    public boolean cambiarPassword(Usuario usuario) {
         boolean exito = false;
         Connection conn = null;
         try {
-            if (!activo) {
-                Class.forName(CLASE).getDeclaredConstructor().newInstance();
-            }
-
             conn = DriverManager.getConnection(URL);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -347,5 +341,108 @@ public class DB {
 
         return exito;
     }
+    
+    public void actualizarEntrada(Entrada entrada) {
 
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+
+                    String sqlInsert = "UPDATE entradas SET titulo = ?, texto = ?, fecha = ? WHERE id = ?";
+                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    pstmt.setString(1, entrada.getTexto());
+                    pstmt.setString(2, entrada.getTexto());
+                    pstmt.setLong(3, entrada.getFecha().getTime());
+                    pstmt.setInt(4, entrada.getId());
+
+                    pstmt.executeQuery();
+
+                    conn.commit();
+                }
+                // Se cierra la conexión con la base de datos
+                conn.close();
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+    }
+
+    public Optional<Entrada> buscarEntrada(Integer id) {
+
+        Optional<Entrada> entrada = Optional.empty();
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+
+                    String sqlInsert = "SELECT id, titulo, texto, fecha FROM entradas WHERE id = ?";
+                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    pstmt.setInt(1, id);
+                    ResultSet cursor = pstmt.executeQuery();
+
+                    if (cursor.next()) {
+                        Entrada e = new Entrada();
+
+                        e.setId(cursor.getInt(1));
+                        e.setTitulo(cursor.getString(2));
+                        e.setTexto(cursor.getString(3));
+                        Date date = new Date();
+                        date.setTime(cursor.getInt(4));
+                        e.setFecha(date);
+
+                        entrada = Optional.of(e);
+                        conn.commit();
+                    }
+                }
+
+                // Se cierra la conexión con la base de datos
+                conn.close();
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+
+        return entrada;
+
+    }
+
+
+    public boolean borrarEntrada(Integer id) {
+        boolean exito = false;
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+
+                    String sqlInsert = "DELETE FROM entradas WHERE id = ?";
+                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    pstmt.setInt(1, id);
+                    pstmt.executeQuery();
+                    conn.commit();
+                    exito = true;
+                }
+
+                // Se cierra la conexión con la base de datos
+                conn.close();
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+
+        return exito;
+
+    }
 }

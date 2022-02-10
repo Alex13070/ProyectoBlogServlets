@@ -36,27 +36,26 @@ public class InicioSesion extends HttpServlet{
             if (nombreUsuario != null && nombreUsuario != null){
                 
                 Usuario usuario = new Usuario(nombreUsuario, password);
+                DB db = new DB ();
+                if (db.comprobarUsuario(usuario)){
 
-                if (DB.comprobarUsuario(usuario)){
+                    //Inicio de sesion correcto
                     session = req.getSession(true);
                     session.setAttribute("nombreUsuario", nombreUsuario);
                     session.setMaxInactiveInterval(120);
                     resp.sendRedirect(req.getContextPath() + "/panel");
-                    //mostrar = "correcto";
                 }
                 else {
-                    //mostrar = "no aceptado";
-                }
-
-                
+                    //Inicio de sesion correcto
+                }                
             }
             else {
-                //mostrar = "primera vez";
+                //Acceso sin inicio de sesion
             }
-            
         }
         else {
-            //mostrar = "habia sesion";
+            //Sesion ya iniciada
+            resp.sendRedirect(req.getContextPath() + "/panel");
         }
 
         ST template = PlantillasHTML.plantillaBasePaginaWeb();

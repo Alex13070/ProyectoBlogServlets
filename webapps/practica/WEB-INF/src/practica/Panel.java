@@ -21,6 +21,7 @@ public class Panel extends HttpServlet {
         HttpSession session = req.getSession(false);
 
         if (session != null) {
+            DB db = new DB ();
             nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");
 
             ST template = PlantillasHTML.plantillaBasePaginaWeb();
@@ -29,7 +30,7 @@ public class Panel extends HttpServlet {
 
 
             buffer.append(PlantillasHTML.formCambiarPassword());
-            buffer.append(PlantillasHTML.listaEntradas(DB.getEntradas()));
+            buffer.append(PlantillasHTML.listaEntradas(db.getEntradas()));
 
             template.add("cuerpo", buffer.toString());
             template.add("nombreUsuario", nombreUsuarioPagina);
@@ -48,7 +49,7 @@ public class Panel extends HttpServlet {
                         .password(psw)
                         .build();
 
-                    DB.cambiarPassword(u);
+                    db.cambiarPassword(u);
                 }
                 else {
                     //Erroneo

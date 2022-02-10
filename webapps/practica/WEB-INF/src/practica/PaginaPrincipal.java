@@ -23,8 +23,8 @@ public class PaginaPrincipal extends HttpServlet {
         if(session != null){
             session.getAttribute("nombreUsuario");
         }
-
-        ST template = PlantillasHTML.paginaPrincipal(DB.getEntradas(), nombreUsuarioPagina);
+        DB db = new DB ();
+        ST template = PlantillasHTML.paginaPrincipal(db.getEntradas(), nombreUsuarioPagina);
 
         out.println(template.render().toString());
     }

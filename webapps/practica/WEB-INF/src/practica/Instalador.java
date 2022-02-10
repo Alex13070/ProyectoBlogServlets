@@ -13,8 +13,8 @@ public class Instalador extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        DB.crearTablas();
+        DB db = new DB ();
+        db.crearTablas();
         
         resp.setCharacterEncoding("UTF-8");
         resp.sendRedirect(req.getContextPath() + "/blog");
