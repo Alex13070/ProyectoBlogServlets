@@ -2,8 +2,10 @@ package practica;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Optional;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +17,8 @@ import javax.servlet.http.HttpSession;
  * 
  * Servlet dedicado al manejo del panel de control del blog
  */
+
+ @WebServlet()
 public class Panel extends HttpServlet {
     
     @Override
@@ -31,7 +35,7 @@ public class Panel extends HttpServlet {
             String psw = req.getParameter("nombreUsuario");
             String psw2 = req.getParameter("password");
 
-            if (!psw.equals("") || !psw2.equals("")){
+            if (psw != null && psw2 != null && !psw.equals("") && !psw2.equals("")){
 
                 if (psw.equals(psw2)){
                     //Correcto
@@ -51,7 +55,7 @@ public class Panel extends HttpServlet {
 
             }          
 
-            out.println(PlantillasHTML.paginaPanelControl("Blog - Panel de control", nombreUsuarioPagina, db.getEntradas()));
+            out.println(PlantillasHTML.paginaPanelControl("Blog - Panel de control", nombreUsuarioPagina, db.getEntradas(), Optional.empty()));
 
         }
         else

@@ -491,3 +491,438 @@
 10-Feb-2022 17:47:34.141 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] has finished in [137] ms
 10-Feb-2022 17:47:34.143 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 10-Feb-2022 17:47:34.181 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1389] milliseconds
+10-Feb-2022 19:44:44.945 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.58
+10-Feb-2022 19:44:44.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Jan 15 2022 14:37:38 UTC
+10-Feb-2022 19:44:44.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.58.0
+10-Feb-2022 19:44:44.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+10-Feb-2022 19:44:44.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+10-Feb-2022 19:44:44.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+10-Feb-2022 19:44:44.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-17.0.2
+10-Feb-2022 19:44:44.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.2+8-LTS-86
+10-Feb-2022 19:44:44.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+10-Feb-2022 19:44:44.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:44:44.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:44:44.954 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Feb-2022 19:44:44.955 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+10-Feb-2022 19:44:44.955 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+10-Feb-2022 19:44:44.955 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Feb-2022 19:44:44.955 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Feb-2022 19:44:44.955 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\conf\logging.properties
+10-Feb-2022 19:44:44.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Feb-2022 19:44:44.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+10-Feb-2022 19:44:44.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Feb-2022 19:44:44.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+10-Feb-2022 19:44:44.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:44:44.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:44:44.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\temp
+10-Feb-2022 19:44:44.960 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Program Files\Java\jdk-17.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\ALEX\AppData\Local\Programs\Python\Python310;C:\Users\ALEX\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ALEX\AppData\Local\Microsoft\WindowsApps;C:\Users\ALEX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ALEX\.dotnet\tools;C:\Users\ALEX\AppData\Local\GitHubDesktop\bin;.]
+10-Feb-2022 19:44:45.096 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+10-Feb-2022 19:44:45.109 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [267] milliseconds
+10-Feb-2022 19:44:45.133 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+10-Feb-2022 19:44:45.133 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.58]
+10-Feb-2022 19:44:45.137 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] de la aplicación web
+10-Feb-2022 19:44:45.426 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:44:45.476 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] has finished in [337] ms
+10-Feb-2022 19:44:45.476 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] de la aplicación web
+10-Feb-2022 19:44:45.767 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:44:45.796 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] has finished in [320] ms
+10-Feb-2022 19:44:45.796 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] de la aplicación web
+10-Feb-2022 19:44:45.950 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:44:45.954 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] has finished in [158] ms
+10-Feb-2022 19:44:45.954 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] de la aplicación web
+10-Feb-2022 19:44:46.116 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:44:46.119 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] has finished in [164] ms
+10-Feb-2022 19:44:46.119 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] de la aplicación web
+10-Feb-2022 19:44:46.356 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:44:46.362 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] has finished in [243] ms
+10-Feb-2022 19:44:46.363 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] de la aplicación web
+10-Feb-2022 19:44:46.504 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:44:46.506 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] has finished in [143] ms
+10-Feb-2022 19:44:46.508 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:44:46.551 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1441] milliseconds
+10-Feb-2022 19:45:26.548 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Falló la recarga del contexto [/practica]
+10-Feb-2022 19:45:26.549 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Ha comenzado la recarga de Contexto [/practica]
+10-Feb-2022 19:45:26.584 WARNING [Catalina-utility-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [practica] registró el conductor JDBC [org.sqlite.JDBC] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+10-Feb-2022 19:45:26.638 SEVERE [Catalina-utility-1] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+	java.lang.reflect.InvocationTargetException
+		at jdk.internal.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.IntrospectionUtils.callMethodN(IntrospectionUtils.java:488)
+		at org.apache.tomcat.util.descriptor.web.CallMethodMultiRule.end(WebRuleSet.java:1087)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1046)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:618)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1728)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2899)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1535)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1277)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:986)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5135)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3818)
+		at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1443)
+		at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1415)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1654)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:315)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1162)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1365)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1369)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1347)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: java.lang.IllegalArgumentException: Los servlets llamados [blog] y [blog] estan ambos mapeados al patrón de URL [/blog] el cual no esta permitido
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMappingDecoded(WebXml.java:343)
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMapping(WebXml.java:336)
+		... 41 more
+10-Feb-2022 19:45:26.649 SEVERE [Catalina-utility-1] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Error de evaluación (parse) en el archivo web.xml de la aplicación a [file:/E:/2º%20DAM/PSP/Tema4/Tomcat/apache-tomcat-9.0.58/webapps/practica/WEB-INF/web.xml]
+	org.xml.sax.SAXParseException; systemId: file:/E:/2º%20DAM/PSP/Tema4/Tomcat/apache-tomcat-9.0.58/webapps/practica/WEB-INF/web.xml; lineNumber: 45; columnNumber: 22; Error at line [45] column [22]: [Los servlets llamados [blog] y [blog] estan ambos mapeados al patrón de URL [/blog] el cual no esta permitido]
+		at org.apache.tomcat.util.digester.Digester.createSAXException(Digester.java:1966)
+		at org.apache.tomcat.util.digester.Digester.createSAXException(Digester.java:1998)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1049)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:618)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1728)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2899)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1535)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1277)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:986)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5135)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3818)
+		at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1443)
+		at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1415)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1654)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:315)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1162)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1365)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1369)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1347)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: java.lang.IllegalArgumentException: Los servlets llamados [blog] y [blog] estan ambos mapeados al patrón de URL [/blog] el cual no esta permitido
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMappingDecoded(WebXml.java:343)
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMapping(WebXml.java:336)
+		at jdk.internal.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.IntrospectionUtils.callMethodN(IntrospectionUtils.java:488)
+		at org.apache.tomcat.util.descriptor.web.CallMethodMultiRule.end(WebRuleSet.java:1087)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1046)
+		... 35 more
+10-Feb-2022 19:45:26.651 SEVERE [Catalina-utility-1] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Se ha producido en la línea [45] columna [22]
+10-Feb-2022 19:45:26.673 SEVERE [Catalina-utility-1] org.apache.catalina.startup.ContextConfig.configureStart Esta aplicación está marcada como no disponible debido a los errores precedentes
+10-Feb-2022 19:45:26.673 SEVERE [Catalina-utility-1] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+10-Feb-2022 19:45:26.686 SEVERE [Catalina-utility-1] org.apache.catalina.core.StandardContext.startInternal Falló en arranque del Contexto [/practica] debido a errores previos
+10-Feb-2022 19:45:26.697 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Se ha completado la recarga de este Contexto
+10-Feb-2022 19:45:46.729 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Falló la recarga del contexto [/practica]
+10-Feb-2022 19:45:47.024 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:47:15.698 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:47:15.717 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+10-Feb-2022 19:47:15.742 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:47:15.757 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:47:18.265 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.58
+10-Feb-2022 19:47:18.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Jan 15 2022 14:37:38 UTC
+10-Feb-2022 19:47:18.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.58.0
+10-Feb-2022 19:47:18.269 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+10-Feb-2022 19:47:18.269 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+10-Feb-2022 19:47:18.269 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+10-Feb-2022 19:47:18.269 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-17.0.2
+10-Feb-2022 19:47:18.269 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.2+8-LTS-86
+10-Feb-2022 19:47:18.270 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+10-Feb-2022 19:47:18.270 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:47:18.270 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:47:18.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Feb-2022 19:47:18.275 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+10-Feb-2022 19:47:18.275 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+10-Feb-2022 19:47:18.275 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Feb-2022 19:47:18.275 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Feb-2022 19:47:18.275 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\conf\logging.properties
+10-Feb-2022 19:47:18.276 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Feb-2022 19:47:18.276 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+10-Feb-2022 19:47:18.276 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Feb-2022 19:47:18.276 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+10-Feb-2022 19:47:18.276 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:47:18.276 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:47:18.277 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\temp
+10-Feb-2022 19:47:18.279 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Program Files\Java\jdk-17.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\ALEX\AppData\Local\Programs\Python\Python310;C:\Users\ALEX\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ALEX\AppData\Local\Microsoft\WindowsApps;C:\Users\ALEX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ALEX\.dotnet\tools;C:\Users\ALEX\AppData\Local\GitHubDesktop\bin;.]
+10-Feb-2022 19:47:18.412 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+10-Feb-2022 19:47:18.424 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [263] milliseconds
+10-Feb-2022 19:47:18.450 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+10-Feb-2022 19:47:18.451 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.58]
+10-Feb-2022 19:47:18.456 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] de la aplicación web
+10-Feb-2022 19:47:18.745 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:47:18.795 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] has finished in [338] ms
+10-Feb-2022 19:47:18.796 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] de la aplicación web
+10-Feb-2022 19:47:19.084 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:47:19.116 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] has finished in [320] ms
+10-Feb-2022 19:47:19.117 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] de la aplicación web
+10-Feb-2022 19:47:19.272 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:47:19.277 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] has finished in [160] ms
+10-Feb-2022 19:47:19.277 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] de la aplicación web
+10-Feb-2022 19:47:19.433 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:47:19.436 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] has finished in [158] ms
+10-Feb-2022 19:47:19.436 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] de la aplicación web
+10-Feb-2022 19:47:19.674 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:47:19.679 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] has finished in [243] ms
+10-Feb-2022 19:47:19.679 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] de la aplicación web
+10-Feb-2022 19:47:19.828 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:47:19.830 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] has finished in [150] ms
+10-Feb-2022 19:47:19.832 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:47:19.873 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1448] milliseconds
+10-Feb-2022 19:51:30.335 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:51:30.362 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+10-Feb-2022 19:51:30.387 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [practica] registró el conductor JDBC [org.sqlite.JDBC] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+10-Feb-2022 19:51:30.388 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:51:30.405 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:51:40.403 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.58
+10-Feb-2022 19:51:40.405 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Jan 15 2022 14:37:38 UTC
+10-Feb-2022 19:51:40.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.58.0
+10-Feb-2022 19:51:40.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+10-Feb-2022 19:51:40.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+10-Feb-2022 19:51:40.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+10-Feb-2022 19:51:40.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-17.0.2
+10-Feb-2022 19:51:40.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.2+8-LTS-86
+10-Feb-2022 19:51:40.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+10-Feb-2022 19:51:40.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:51:40.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:51:40.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Feb-2022 19:51:40.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+10-Feb-2022 19:51:40.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+10-Feb-2022 19:51:40.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Feb-2022 19:51:40.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Feb-2022 19:51:40.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\conf\logging.properties
+10-Feb-2022 19:51:40.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Feb-2022 19:51:40.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+10-Feb-2022 19:51:40.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Feb-2022 19:51:40.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+10-Feb-2022 19:51:40.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:51:40.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:51:40.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\temp
+10-Feb-2022 19:51:40.416 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Program Files\Java\jdk-17.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\ALEX\AppData\Local\Programs\Python\Python310;C:\Users\ALEX\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ALEX\AppData\Local\Microsoft\WindowsApps;C:\Users\ALEX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ALEX\.dotnet\tools;C:\Users\ALEX\AppData\Local\GitHubDesktop\bin;.]
+10-Feb-2022 19:51:40.551 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+10-Feb-2022 19:51:40.564 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [269] milliseconds
+10-Feb-2022 19:51:40.589 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+10-Feb-2022 19:51:40.589 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.58]
+10-Feb-2022 19:51:40.594 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] de la aplicación web
+10-Feb-2022 19:51:40.899 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:51:40.951 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] has finished in [356] ms
+10-Feb-2022 19:51:40.952 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] de la aplicación web
+10-Feb-2022 19:51:41.271 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:51:41.303 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] has finished in [352] ms
+10-Feb-2022 19:51:41.303 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] de la aplicación web
+10-Feb-2022 19:51:41.474 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:51:41.479 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] has finished in [176] ms
+10-Feb-2022 19:51:41.480 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] de la aplicación web
+10-Feb-2022 19:51:41.653 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:51:41.655 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] has finished in [175] ms
+10-Feb-2022 19:51:41.656 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] de la aplicación web
+10-Feb-2022 19:51:41.915 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:51:41.920 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] has finished in [263] ms
+10-Feb-2022 19:51:41.920 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] de la aplicación web
+10-Feb-2022 19:51:42.079 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:51:42.081 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] has finished in [161] ms
+10-Feb-2022 19:51:42.083 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:51:42.120 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1555] milliseconds
+10-Feb-2022 19:56:25.174 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:56:25.198 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+10-Feb-2022 19:56:25.596 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [practica] registró el conductor JDBC [org.sqlite.JDBC] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+10-Feb-2022 19:56:25.598 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:56:25.603 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:56:27.437 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.58
+10-Feb-2022 19:56:27.439 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Jan 15 2022 14:37:38 UTC
+10-Feb-2022 19:56:27.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.58.0
+10-Feb-2022 19:56:27.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+10-Feb-2022 19:56:27.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+10-Feb-2022 19:56:27.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+10-Feb-2022 19:56:27.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-17.0.2
+10-Feb-2022 19:56:27.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.2+8-LTS-86
+10-Feb-2022 19:56:27.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+10-Feb-2022 19:56:27.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:56:27.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:56:27.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Feb-2022 19:56:27.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+10-Feb-2022 19:56:27.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+10-Feb-2022 19:56:27.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Feb-2022 19:56:27.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Feb-2022 19:56:27.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\conf\logging.properties
+10-Feb-2022 19:56:27.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Feb-2022 19:56:27.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+10-Feb-2022 19:56:27.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Feb-2022 19:56:27.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+10-Feb-2022 19:56:27.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:56:27.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:56:27.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\temp
+10-Feb-2022 19:56:27.451 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Program Files\Java\jdk-17.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\ALEX\AppData\Local\Programs\Python\Python310;C:\Users\ALEX\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ALEX\AppData\Local\Microsoft\WindowsApps;C:\Users\ALEX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ALEX\.dotnet\tools;C:\Users\ALEX\AppData\Local\GitHubDesktop\bin;.]
+10-Feb-2022 19:56:27.592 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+10-Feb-2022 19:56:27.606 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [280] milliseconds
+10-Feb-2022 19:56:27.629 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+10-Feb-2022 19:56:27.629 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.58]
+10-Feb-2022 19:56:27.634 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] de la aplicación web
+10-Feb-2022 19:56:27.940 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:56:27.991 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] has finished in [356] ms
+10-Feb-2022 19:56:27.992 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] de la aplicación web
+10-Feb-2022 19:56:28.461 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:56:28.489 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] has finished in [497] ms
+10-Feb-2022 19:56:28.490 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] de la aplicación web
+10-Feb-2022 19:56:28.657 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:56:28.661 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] has finished in [171] ms
+10-Feb-2022 19:56:28.661 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] de la aplicación web
+10-Feb-2022 19:56:28.818 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:56:28.820 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] has finished in [159] ms
+10-Feb-2022 19:56:28.821 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] de la aplicación web
+10-Feb-2022 19:56:29.100 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:56:29.114 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] has finished in [292] ms
+10-Feb-2022 19:56:29.114 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] de la aplicación web
+10-Feb-2022 19:56:29.275 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:56:29.277 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] has finished in [162] ms
+10-Feb-2022 19:56:29.279 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:56:29.321 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1714] milliseconds
+10-Feb-2022 19:57:04.777 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:57:04.801 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+10-Feb-2022 19:57:05.178 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [practica] registró el conductor JDBC [org.sqlite.JDBC] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+10-Feb-2022 19:57:05.179 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:57:05.190 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:59:48.198 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.58
+10-Feb-2022 19:59:48.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Jan 15 2022 14:37:38 UTC
+10-Feb-2022 19:59:48.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.58.0
+10-Feb-2022 19:59:48.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+10-Feb-2022 19:59:48.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+10-Feb-2022 19:59:48.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+10-Feb-2022 19:59:48.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-17.0.2
+10-Feb-2022 19:59:48.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.2+8-LTS-86
+10-Feb-2022 19:59:48.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+10-Feb-2022 19:59:48.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:59:48.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:59:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Feb-2022 19:59:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+10-Feb-2022 19:59:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+10-Feb-2022 19:59:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Feb-2022 19:59:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Feb-2022 19:59:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\conf\logging.properties
+10-Feb-2022 19:59:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Feb-2022 19:59:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+10-Feb-2022 19:59:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Feb-2022 19:59:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+10-Feb-2022 19:59:48.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:59:48.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 19:59:48.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\temp
+10-Feb-2022 19:59:48.211 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Program Files\Java\jdk-17.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\ALEX\AppData\Local\Programs\Python\Python310;C:\Users\ALEX\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ALEX\AppData\Local\Microsoft\WindowsApps;C:\Users\ALEX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ALEX\.dotnet\tools;C:\Users\ALEX\AppData\Local\GitHubDesktop\bin;.]
+10-Feb-2022 19:59:48.346 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+10-Feb-2022 19:59:48.361 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [271] milliseconds
+10-Feb-2022 19:59:48.393 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+10-Feb-2022 19:59:48.393 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.58]
+10-Feb-2022 19:59:48.399 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] de la aplicación web
+10-Feb-2022 19:59:48.704 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:59:48.756 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] has finished in [357] ms
+10-Feb-2022 19:59:48.756 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] de la aplicación web
+10-Feb-2022 19:59:49.059 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:59:49.091 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] has finished in [335] ms
+10-Feb-2022 19:59:49.091 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] de la aplicación web
+10-Feb-2022 19:59:49.246 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:59:49.251 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] has finished in [160] ms
+10-Feb-2022 19:59:49.251 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] de la aplicación web
+10-Feb-2022 19:59:49.411 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:59:49.413 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] has finished in [162] ms
+10-Feb-2022 19:59:49.413 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] de la aplicación web
+10-Feb-2022 19:59:49.658 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:59:49.673 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] has finished in [260] ms
+10-Feb-2022 19:59:49.674 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] de la aplicación web
+10-Feb-2022 19:59:49.824 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 19:59:49.826 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] has finished in [153] ms
+10-Feb-2022 19:59:49.827 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:59:49.868 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1507] milliseconds
+10-Feb-2022 19:59:52.234 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:59:52.260 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+10-Feb-2022 19:59:52.288 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 19:59:52.302 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 20:04:28.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.58
+10-Feb-2022 20:04:28.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Jan 15 2022 14:37:38 UTC
+10-Feb-2022 20:04:28.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.58.0
+10-Feb-2022 20:04:28.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+10-Feb-2022 20:04:28.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+10-Feb-2022 20:04:28.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+10-Feb-2022 20:04:28.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-17.0.2
+10-Feb-2022 20:04:28.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.2+8-LTS-86
+10-Feb-2022 20:04:28.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+10-Feb-2022 20:04:28.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 20:04:28.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 20:04:28.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Feb-2022 20:04:28.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+10-Feb-2022 20:04:28.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+10-Feb-2022 20:04:28.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Feb-2022 20:04:28.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Feb-2022 20:04:28.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\conf\logging.properties
+10-Feb-2022 20:04:28.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Feb-2022 20:04:28.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+10-Feb-2022 20:04:28.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Feb-2022 20:04:28.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+10-Feb-2022 20:04:28.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 20:04:28.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58
+10-Feb-2022 20:04:28.233 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\temp
+10-Feb-2022 20:04:28.235 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Program Files\Java\jdk-17.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\ALEX\AppData\Local\Programs\Python\Python310;C:\Users\ALEX\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ALEX\AppData\Local\Microsoft\WindowsApps;C:\Users\ALEX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ALEX\.dotnet\tools;C:\Users\ALEX\AppData\Local\GitHubDesktop\bin;.]
+10-Feb-2022 20:04:28.368 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+10-Feb-2022 20:04:28.381 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [264] milliseconds
+10-Feb-2022 20:04:28.407 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+10-Feb-2022 20:04:28.407 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.58]
+10-Feb-2022 20:04:28.412 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] de la aplicación web
+10-Feb-2022 20:04:28.708 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 20:04:28.757 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\docs] has finished in [344] ms
+10-Feb-2022 20:04:28.757 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] de la aplicación web
+10-Feb-2022 20:04:29.037 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 20:04:29.065 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\examples] has finished in [308] ms
+10-Feb-2022 20:04:29.066 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] de la aplicación web
+10-Feb-2022 20:04:29.221 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 20:04:29.226 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\host-manager] has finished in [160] ms
+10-Feb-2022 20:04:29.227 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] de la aplicación web
+10-Feb-2022 20:04:29.382 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 20:04:29.384 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\manager] has finished in [158] ms
+10-Feb-2022 20:04:29.384 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] de la aplicación web
+10-Feb-2022 20:04:29.624 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 20:04:29.639 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\practica] has finished in [255] ms
+10-Feb-2022 20:04:29.640 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] de la aplicación web
+10-Feb-2022 20:04:29.787 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+10-Feb-2022 20:04:29.789 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [E:\2º DAM\PSP\Tema4\Tomcat\apache-tomcat-9.0.58\webapps\ROOT] has finished in [149] ms
+10-Feb-2022 20:04:29.791 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 20:04:29.834 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1452] milliseconds
+10-Feb-2022 20:06:15.234 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 20:06:15.245 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+10-Feb-2022 20:06:15.621 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [practica] registró el conductor JDBC [org.sqlite.JDBC] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+10-Feb-2022 20:06:15.623 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Feb-2022 20:06:15.635 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

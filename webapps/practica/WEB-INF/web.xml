@@ -35,4 +35,15 @@
       <url-pattern>/blog</url-pattern>
    </servlet-mapping>
 
+   <servlet>
+      <servlet-name>panel</servlet-name>      
+      <servlet-class>practica.Panel</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>panel</servlet-name>
+      <url-pattern>/panel</url-pattern>
+   </servlet-mapping>
+
+
+
 </web-app>

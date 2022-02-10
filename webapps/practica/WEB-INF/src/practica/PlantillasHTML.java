@@ -5,6 +5,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.stringtemplate.v4.ST;
 
@@ -53,11 +54,12 @@ public class PlantillasHTML {
 
     /**
      * Plantilla para el formulario de cambio de password
+     * @param info
      * @return Plantilla lista para ser introducida
      */
-    public static ST formCambiarPassword() {
+    public static String formCambiarPassword(Optional<String> info) {
 
-        ST template = new ST("""
+        ST template = new ST ("""
         <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
 
             <header class='w3-container w3-pink'>
@@ -78,10 +80,11 @@ public class PlantillasHTML {
                 </form>
                 
             </div>
-        </div>
-        """, '$','$');
+        </div>""", '$', '$');
 
-        return template;
+        template.add("info", info.orElse(""));
+
+        return template.render().toString();
         
     }
 
@@ -399,6 +402,18 @@ public class PlantillasHTML {
 
         StringBuffer buffer = new StringBuffer();
 
+        buffer.append("""
+        
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Entradas</h1>
+            </header>
+
+            <div class='w3-container w3-margin-top'>
+                <ul class='w3-ul w3-hoverable w3-margin-bottom'>
+        """);
+
         for (Entrada entrada : entradas) {
             ST template = new ST (entradaPanel(), '$', '$');
 
@@ -408,6 +423,8 @@ public class PlantillasHTML {
             buffer.append(template.render().toString());
 
         }
+
+        buffer.append("</ul></div></div>");
 
         return buffer.toString();
         
@@ -428,13 +445,13 @@ public class PlantillasHTML {
         
     }
 
-    public static String paginaPanelControl(String titulo, String nombreUsuario, List<Entrada> entradas) {
+    public static String paginaPanelControl(String titulo, String nombreUsuario, List<Entrada> entradas, Optional<String> info) {
 
         ST template = new ST (plantillaBasePaginaWeb(), '$', '$');
 
         StringBuffer buffer = new StringBuffer();
         
-        buffer.append(formCambiarPassword());
+        buffer.append(formCambiarPassword(info));
         buffer.append(entradasPanelControl(entradas));
 
         template.add("cuerpo", buffer.toString());
