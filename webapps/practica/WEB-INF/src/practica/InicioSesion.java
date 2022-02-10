@@ -11,6 +11,11 @@ import javax.servlet.http.HttpSession;
 
 import org.stringtemplate.v4.ST;
 
+/**
+ * @author @Alex13070
+ * 
+ * Servlet dedicado a iniciar sesion
+ */
 public class InicioSesion extends HttpServlet{
     
     @Override

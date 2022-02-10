@@ -11,6 +11,11 @@ import javax.servlet.http.HttpSession;
 
 import org.stringtemplate.v4.ST;
 
+/**
+ * @author @Alex13070
+ * 
+ * Servlet dedicado al manejo del panel de control del blog
+ */
 public class Panel extends HttpServlet {
     
     @Override

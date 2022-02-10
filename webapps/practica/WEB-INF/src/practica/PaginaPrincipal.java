@@ -11,7 +11,13 @@ import javax.servlet.http.HttpSession;
 
 import org.stringtemplate.v4.ST;
 
+/**
+ * @author @Alex13070
+ * 
+ * Servlet dedicado a la pagina principal del blog
+ */
 public class PaginaPrincipal extends HttpServlet {
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

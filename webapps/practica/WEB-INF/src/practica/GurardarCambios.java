@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
+/**
+ * @author @Alex13070
+ * 
+ * Servlet para actualizar las entradas.
+ */
 public class GurardarCambios extends HttpServlet {
 
     /**

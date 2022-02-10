@@ -8,6 +8,11 @@ import java.util.List;
 
 import org.stringtemplate.v4.ST;
 
+/**
+ * @author @Alex13070
+ * 
+ * Clase en la que estan almacenadas las plantillas de las paginas web
+ */
 public class PlantillasHTML {
 
     /**

@@ -8,6 +8,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+
+/**
+ * @author @Alex13070
+ * 
+ * POJO entrada
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
