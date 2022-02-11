@@ -2,6 +2,7 @@ package practica;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,12 @@ import javax.servlet.http.HttpSession;
  */
 public class Panel extends HttpServlet {
     
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String nombreUsuarioPagina = "Sin registrar";
@@ -25,13 +32,17 @@ public class Panel extends HttpServlet {
         //String mostrar = "";
         HttpSession session = req.getSession(false);
         Optional<String> info = Optional.empty();
+        List<String> usuarios = null;
 
         if (session != null) {
             DB db = new DB ();
             nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");
 
-            String psw = req.getParameter("nombreUsuario");
-            String psw2 = req.getParameter("password");
+            if (nombreUsuarioPagina.equals("admin"))
+                usuarios = db.getUsuarios();
+
+            String psw = req.getParameter("password");
+            String psw2 = req.getParameter("password2");
 
             if (psw != null && psw2 != null && !psw.equals("") && !psw2.equals("")){
 
@@ -39,23 +50,28 @@ public class Panel extends HttpServlet {
                     //Correcto
                     //Actualizar usuario
                     //Mensaje de correcto
-                    Usuario u = Usuario.builder()
-                        .usuario( (String) session.getAttribute("nombreUsuario") )
-                        .password(psw)
-                        .build();
+                    if (stringValido(psw)) {
+                        Usuario u = Usuario.builder()
+                            .usuario( (String) session.getAttribute("nombreUsuario") )
+                            .password(psw)
+                            .build();
 
-                    db.cambiarPassword(u);
-                    info = Optional.of("Cambio de contrase&nacute;a correcto");
+                        if (db.cambiarPassword(u))
+                            info = Optional.of("Cambio de contrase&ntilde;a correcto");
+                        else
+                            info = Optional.of("Error en el servidor");
+                    }
+                    
                 }
                 else {
                     //Erroneo
                     //Mensaje de error
-                    info = Optional.of("Error: Las contrase&nacute;a no coincide");
+                    info = Optional.of("Error: Las contrase&ntilde;as no coinciden");
                 }
 
-            }          
+            }
 
-            out.println(PlantillasHTML.paginaPanelControl("Blog - Panel de control", nombreUsuarioPagina, db.getEntradas(), info));
+            out.println(PlantillasHTML.paginaPanelControl("Blog - Panel de control", nombreUsuarioPagina, db.getEntradas(), usuarios, info));
 
         }
         else
@@ -63,5 +79,9 @@ public class Panel extends HttpServlet {
 
 
         
+    }
+
+    private boolean stringValido(String s) {
+        return !(s.contains("'") || s.contains("\"") || s.contains("<") || s.contains(">") || s.contains("&"));
     }
 }

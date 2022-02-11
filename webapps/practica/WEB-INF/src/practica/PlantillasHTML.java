@@ -81,7 +81,7 @@ public class PlantillasHTML {
                     <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
                     <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
                     <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
-                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password2' placeholder='Contrase&ntilde;a' name='password2'>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password2'>
                     $alerta$
                     <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Registrar</button>
                             
@@ -248,7 +248,7 @@ public class PlantillasHTML {
                                             </form>
                                         </li>
                                     </ul>
-                                    <p class='d-flex'>
+                                    <div class='d-flex'>
                                         <ul class='navbar-nav me-auto'>
                                             <li class='nav-item w3-margin-left w3-margin-right'>
                                                 <form action='iniciosesion' method='get'>
@@ -258,7 +258,7 @@ public class PlantillasHTML {
                                                 </form>
                                             </li>
                                         </ul>
-                                    </p>
+                                    </div>
 
                                     <form class='d-flex' method='get' action='buscarentrada'>
                                         <input class='form-control me-2' type='text' placeholder='Search'>
@@ -497,11 +497,25 @@ public class PlantillasHTML {
 
         return ("""
         <li>
-            <a href='http://127.0.0.1:8080/practica/borrar?id=$idEntrada$'>Editar</a>
+            <a href='http://127.0.0.1:8080/practica/borrar?id=$idEntrada$'>Borrar</a>
             &nbsp;
-            <a href='http://127.0.0.1:8080/practica/editar?id=$idEntrada$'>Borrar</a>
+            <a href='http://127.0.0.1:8080/practica/editar?id=$idEntrada$'>Editar</a>
+            
             &nbsp; &nbsp;&nbsp;
             $tituloEntrada$
+        </li>
+        
+        """);
+        
+    }
+
+    public static String usuarioPanel() {
+
+        return ("""
+        <li>
+            <a href='http://127.0.0.1:8080/practica/borrarusuario?nombreUsuario=$nombreUsuario$'>Borrar</a>
+            &nbsp; &nbsp;&nbsp;
+            $nombreUsuario$
         </li>
         
         """);
@@ -516,7 +530,7 @@ public class PlantillasHTML {
      * @param info info de vuelta de la base de datos
      * @return HTML de la pagina panel de control
      */
-    public static String paginaPanelControl(String titulo, String nombreUsuario, List<Entrada> entradas, Optional<String> info) {
+    public static String paginaPanelControl(String titulo, String nombreUsuario, List<Entrada> entradas, List<String> usuarios, Optional<String> info) {
 
         ST template = new ST (plantillaBasePaginaWeb(), '$', '$');
 
@@ -525,11 +539,48 @@ public class PlantillasHTML {
         buffer.append(formCambiarPassword(info));
         buffer.append(entradasPanelControl(entradas));
 
+        if (usuarios != null) {
+            buffer.append(usuariosPanelControl(usuarios));
+        }
+
+
         template.add("cuerpo", buffer.toString());
         template.add("titulo", titulo);
         template.add("nombreUsuario", nombreUsuario);
 
         return template.render().toString();
+    }
+
+    private static String usuariosPanelControl(List<String> usuarios) {
+
+        StringBuffer buffer = new StringBuffer();
+
+        buffer.append("""
+        
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Usuarios</h1>
+            </header>
+
+            <div class='w3-container w3-margin-top'>
+                <ul class='w3-ul w3-hoverable w3-margin-bottom'>
+        """);
+
+        usuarios.removeIf(u -> u.equals("admin"));
+
+        for (String s : usuarios) {
+            ST template = new ST (usuarioPanel(), '$', '$');
+
+            template.add("nombreUsuario", s);
+
+            buffer.append(template.render().toString());
+
+        }
+
+        buffer.append("</ul></div></div>");
+
+        return buffer.toString();
     }
 
     public static String paginaRegistro(String titulo, String nombreUsuario, Optional<String> mensaje) {

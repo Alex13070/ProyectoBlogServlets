@@ -61,9 +61,10 @@ public class Editar extends HttpServlet {
      * @return String sin los parametros especiales
      */
     private String extraerCaracteres(String str) {
+        
+        str.replaceAll("&", "&amp;");
         str.replaceAll("<", "&gt;");
         str.replaceAll(">", "&lt;");
-        str.replaceAll("&", "&amp;");
         str.replaceAll("'", "&#039;");
         str.replaceAll("\"", "&#034;");
 

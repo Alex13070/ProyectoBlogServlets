@@ -86,6 +86,18 @@ public class DB {
                         );
                         """);
 
+
+        Entrada entrada = new Entrada(0,
+                "titulo",
+                "relleno relleno relleno relleno relleno relleno relleno relleno relleno relleno relleno",
+                new Date(1644079620365L));
+
+        try {
+            crearEntrada(entrada);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
         Usuario usuario = new Usuario("admin", "admin");
 
         try {
@@ -94,19 +106,8 @@ public class DB {
             System.out.println(e);
         }
 
-        Date date = new Date();
-        date.setTime(1644079620365L);
 
-        Entrada entrada = new Entrada(0,
-                "titulo",
-                "relleno relleno relleno relleno relleno relleno relleno relleno relleno relleno relleno",
-                date);
-
-        try {
-            crearEntrada(entrada);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        
 
     }
 
@@ -134,7 +135,7 @@ public class DB {
                     pstmt.setString(1, usuario.getUsuario());
                     pstmt.setString(2, usuario.getPassword());
                     pstmt.executeUpdate();
-                    conn.commit();
+                    
                     exito = true;
 
                 }
@@ -171,7 +172,7 @@ public class DB {
                     pstmt.setString(2, entrada.getTexto());
                     pstmt.setLong(3, entrada.getFecha().getTime());
                     pstmt.executeUpdate();
-                    conn.commit();
+                    
                     exito = true;
                 }
                 // Se cierra la conexión con la base de datos
@@ -290,9 +291,7 @@ public class DB {
                         e.setId(cursor.getInt(1));
                         e.setTitulo(cursor.getString(2));
                         e.setTexto(cursor.getString(3));
-                        Date date = new Date();
-                        date.setTime(cursor.getInt(4));
-                        e.setFecha(date);
+                        e.setFecha(new Date(cursor.getInt(4)));
 
                         entradas.add(e);
                     }
@@ -326,14 +325,13 @@ public class DB {
         } finally {
             try {
                 if (conn != null) {
-                    String sqlInsert = "UPDATE usuario SET password = ? WHERE usuario = ?";
+                    String sqlInsert = "UPDATE usuarios SET password = ? WHERE usuario = ?";
                     PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
                     pstmt.setString(1, usuario.getPassword());
                     pstmt.setString(2, usuario.getUsuario());
                     
                     pstmt.executeUpdate();
-                    conn.commit();
-
+                    
                     exito = true;
                 }
                 // Se cierra la conexión con la base de datos
@@ -366,7 +364,7 @@ public class DB {
 
                     pstmt.executeQuery();
 
-                    conn.commit();
+                    
                 }
                 // Se cierra la conexión con la base de datos
                 conn.close();
@@ -404,12 +402,7 @@ public class DB {
                         e.setId(cursor.getInt(1));
                         e.setTitulo(cursor.getString(2));
                         e.setTexto(cursor.getString(3));
-
-                        Date date = new Date();
-
-                        date.setTime(cursor.getLong(4));
-
-                        e.setFecha(date);
+                        e.setFecha( new Date(cursor.getLong(4)));
 
                         entrada = Optional.of(e);
                     }
@@ -461,6 +454,67 @@ public class DB {
 
         return exito;
 
+    }
+
+    public List<String> getUsuarios() {
+
+        List<String> usuarios = new ArrayList<String>();
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+
+                    String sqlInsert = "SELECT usuario FROM usuarios";
+                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    ResultSet cursor = pstmt.executeQuery();
+
+                    while (cursor.next()) 
+                        usuarios.add(cursor.getString(1));
+
+                }
+                // Se cierra la conexión con la base de datos
+                conn.close();
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+
+
+        return usuarios;
+    }
+
+    public boolean borrarUsuario(String nombreUsuario) {
+        boolean exito = false;
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+
+                    String sqlInsert = "DELETE FROM usuarios WHERE usuario = ?";
+                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    pstmt.setString (1, nombreUsuario);
+                    pstmt.executeUpdate();
+                    exito = true;
+                }
+
+                // Se cierra la conexión con la base de datos
+                conn.close();
+            } catch (SQLException ex) {
+
+
+                System.err.println(ex.getMessage());
+            }
+        }
+
+        return exito;
     }
 
 

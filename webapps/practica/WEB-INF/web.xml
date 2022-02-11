@@ -62,6 +62,15 @@
       <url-pattern>/borrar</url-pattern>
    </servlet-mapping>
 
+   <servlet>
+      <servlet-name>borrarusuario</servlet-name>      
+      <servlet-class>practica.BorrarUsuario</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>borrarusuario</servlet-name>
+      <url-pattern>/borrarusuario</url-pattern>
+   </servlet-mapping>
+
 
 
 

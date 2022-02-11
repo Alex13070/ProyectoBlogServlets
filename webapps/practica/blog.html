@@ -105,7 +105,7 @@
                                     </form>
                                 </li>
                             </ul>
-                            <form action='get' class='d-flex'>
+                            <div class='d-flex'>
                                 <ul class='navbar-nav me-auto'>
                                     <li class='nav-item w3-margin-left w3-margin-right'>
                                         <form action='iniciarsesion' method='get'>
@@ -115,7 +115,7 @@
                                         </form>
                                     </li>
                                 </ul>
-                            </form>
+                            </div>
 
                             <form class='d-flex' method='get' action='buscarentrada'>
                                 <input class='form-control me-2' type='text' placeholder='Search'>
@@ -186,6 +186,11 @@
                         </p>
                     </div>
                     <footer class='w3-container w3-white'>
+                        <p class='w3-left'>
+                            <a href='http://127.0.0.1:8080/practica/borrar?id=$idEntrada$'>Borrar</a>
+                            &nbsp;
+                            <a href='http://127.0.0.1:8080/practica/editar?id=$idEntrada$'>Editar</a>
+                        </p>
                         <h5 class='w3-right'>Footer</h5>
                     </footer>
 

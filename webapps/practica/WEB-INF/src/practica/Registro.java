@@ -27,20 +27,26 @@ public class Registro extends HttpServlet {
 
                 if (!db.existeUsuario(nombreUsuario)){
 
-                    Usuario usuario = Usuario.builder().usuario(nombreUsuario).password(password).build();
-                    db.crearUsuario(usuario);
-
-                    //Mensaje de registro correcto
-                    resp.sendRedirect(req.getContextPath() + "/iniciosesion");
+                    if (stringValido (nombreUsuario) && stringValido (password)) {
+                        Usuario usuario = Usuario.builder().usuario(nombreUsuario).password(password).build();
+                        db.crearUsuario(usuario);
+                        resp.sendRedirect(req.getContextPath() + "/iniciosesion");
+                    }
+                    else
+                        mensaje = Optional.of("Usuario o contrase&ntilde;a contienen caracteres inadecuados");
                 }
                 else
                     mensaje = Optional.of("El nombre de usuario introducido ya existe");
             }
             else 
-                mensaje = Optional.of("Las contrase&nacute;as no coinciden");
+                mensaje = Optional.of("Las contrase&ntilde;as no coinciden");
         }
 
         out.println(PlantillasHTML.paginaRegistro("Blog - Registro",  "Sin identificar", mensaje));
+    }
+
+    private boolean stringValido(String s) {
+        return !(s.contains("'") || s.contains("\"") || s.contains("<") || s.contains(">") || s.contains("&"));
     }
     
 }
