@@ -149,3 +149,16 @@
 127.0.0.1 - - [11/Feb/2022:02:20:31 +0100] "GET /practica/panel HTTP/1.1" 405 725
 127.0.0.1 - - [11/Feb/2022:02:20:33 +0100] "GET /practica/iniciosesion? HTTP/1.1" 302 -
 127.0.0.1 - - [11/Feb/2022:02:20:33 +0100] "GET /practica/panel HTTP/1.1" 405 725
+127.0.0.1 - - [11/Feb/2022:02:22:32 +0100] "GET /practica/blog HTTP/1.1" 200 6540
+127.0.0.1 - - [11/Feb/2022:02:22:38 +0100] "POST /practica/iniciosesion HTTP/1.1" 302 -
+127.0.0.1 - - [11/Feb/2022:02:22:38 +0100] "GET /practica/panel HTTP/1.1" 405 725
+127.0.0.1 - - [11/Feb/2022:02:22:49 +0100] "POST /practica/iniciosesion HTTP/1.1" 302 -
+127.0.0.1 - - [11/Feb/2022:02:22:49 +0100] "GET /practica/panel HTTP/1.1" 405 725
+127.0.0.1 - - [11/Feb/2022:02:22:55 +0100] "GET /practica/blog HTTP/1.1" 200 6540
+127.0.0.1 - - [11/Feb/2022:02:22:55 +0100] "GET /practica/imagenes/logo2.png HTTP/1.1" 200 9040
+127.0.0.1 - - [11/Feb/2022:02:22:56 +0100] "GET /practica/imagenes/fondoPagina.jpg HTTP/1.1" 200 6961162
+127.0.0.1 - - [11/Feb/2022:02:22:56 +0100] "GET /practica/imagenes/logo.png HTTP/1.1" 200 5683
+127.0.0.1 - - [11/Feb/2022:02:22:57 +0100] "POST /practica/iniciosesion HTTP/1.1" 302 -
+127.0.0.1 - - [11/Feb/2022:02:22:57 +0100] "GET /practica/panel HTTP/1.1" 405 725
+127.0.0.1 - - [11/Feb/2022:02:23:13 +0100] "GET /practica/iniciosesion? HTTP/1.1" 302 -
+127.0.0.1 - - [11/Feb/2022:02:23:13 +0100] "GET /practica/panel HTTP/1.1" 405 725
