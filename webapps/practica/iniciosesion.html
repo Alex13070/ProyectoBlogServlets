@@ -151,18 +151,20 @@
                 <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
 
                     <header class='w3-container w3-pink'>
-                        <h1>Cambiar de contrase&ntilde;a</h1>
+                        <h1>Editor de entradas</h1>
                     </header>
 
                     <div class='w3-container w3-margin-top'>
-                        <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='cambiarpassword'>
+                        <form class='w3-container' style='width: 60%; margin: 0 auto' method='get' action='a?id=1'>
                             
-                            <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
-                            <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
-                            <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
-                            <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Repetir contrase&ntilde;a' name='password2'>
-                            <label class='w3-margin-top w3-margin-bottom' style="color: red "><h3>Error</h3></label><br>
-                            <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Cambiar contrase&ntilde;a</button>
+                            <label class='w3-margin-top w3-margin-bottom'>T&iacute;tulo</label>
+                            <input class='w3-input w3-margin-top w3-margin-bottom' placeholder='T&iacute;tulo' name='titulo'>
+                            <label class='w3-margin-top w3-margin-bottom'>Texto</label>
+                            <textarea class='w3-input w3-margin-top w3-margin-bottom' placeholder='Cuerpo del blog' name='texto'></textarea>
+                            <label class='w3-margin-top w3-margin-bottom'>Fecha</label>
+                            <input class='w3-input w3-margin-top w3-margin-bottom' type='date' placeholder='T&iacute;tulo' name='fecha'>
+                            
+                            <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Guardar Entrada</button>
                                 
                             
                         </form>

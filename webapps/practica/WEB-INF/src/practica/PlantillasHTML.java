@@ -499,7 +499,7 @@ public class PlantillasHTML {
         <li>
             <a href='http://127.0.0.1:8080/practica/borrar?id=$idEntrada$'>Borrar</a>
             &nbsp;
-            <a href='http://127.0.0.1:8080/practica/editar?id=$idEntrada$'>Editar</a>
+            <a href='http://127.0.0.1:8080/practica/editor?id=$idEntrada$'>Editar</a>
             
             &nbsp; &nbsp;&nbsp;
             $tituloEntrada$

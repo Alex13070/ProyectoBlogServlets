@@ -336,3 +336,8 @@
 127.0.0.1 - - [11/Feb/2022:03:45:18 +0100] "GET /practica/blog HTTP/1.1" 200 6559
 127.0.0.1 - - [11/Feb/2022:03:45:28 +0100] "GET /practica/borrar?id=$idEntrada$ HTTP/1.1" 302 -
 127.0.0.1 - - [11/Feb/2022:03:45:28 +0100] "GET /practica/blog HTTP/1.1" 200 6559
+0:0:0:0:0:0:0:1 - - [11/Feb/2022:18:11:52 +0100] "GET /practica/blog HTTP/1.1" 200 6559
+0:0:0:0:0:0:0:1 - - [11/Feb/2022:18:11:54 +0100] "POST /practica/crearentrada HTTP/1.1" 404 712
+0:0:0:0:0:0:0:1 - - [11/Feb/2022:18:12:01 +0100] "GET /practica/iniciosesion? HTTP/1.1" 200 8111
+0:0:0:0:0:0:0:1 - - [11/Feb/2022:18:12:08 +0100] "POST /practica/iniciosesion HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [11/Feb/2022:18:12:08 +0100] "GET /practica/panel HTTP/1.1" 200 8948

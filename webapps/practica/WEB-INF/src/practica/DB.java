@@ -362,7 +362,7 @@ public class DB {
                     pstmt.setLong(3, entrada.getFecha().getTime());
                     pstmt.setInt(4, entrada.getId());
 
-                    pstmt.executeQuery();
+                    pstmt.executeUpdate();
 
                     
                 }

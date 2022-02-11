@@ -14,37 +14,45 @@ import javax.servlet.http.HttpSession;
  * 
  * Servlet dedicado a editar entradas en el servidor
  */
-public class Editar extends HttpServlet {
-/*
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp);
-    }
-*/
+public class Editor extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        HttpSession session = req.getSession (false);
+
+        if (session == null) {
+            resp.sendRedirect(req.getContextPath() + "/iniciosesion");
+        }
+        else {
+            resp.sendRedirect(req.getContextPath() + "/panel");
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //String nombreUsuarioPagina = "Sin registrar";
         //PrintWriter out = resp.getWriter();
         HttpSession session = req.getSession(false);
+        Optional<Entrada> entrada = Optional.empty();
 
         if(session != null){
             String id = (req.getParameter("id"));
+            DB db = new DB ();
             
             if (id != null) {
                 
-                DB db = new DB ();
-
-                Optional<Entrada> e = db.buscarEntrada(Integer.parseInt(id));
-                
-                if (e.isPresent()) {
-                    Entrada entrada = e.get();
+                if (entrada.isPresent()) {
+                    Entrada e = entrada.get();
                     
-                    entrada.setTitulo(extraerCaracteres(entrada.getTitulo()));
-                    entrada.setTexto(extraerCaracteres(entrada.getTexto()));
+                    e.setTitulo(extraerCaracteres(e.getTitulo()));
+                    e.setTexto(extraerCaracteres(e.getTexto()));
+
+                    db.actualizarEntrada(e);
                 }
             }
             else {
-                resp.sendRedirect(req.getContextPath() + "/panelcontrol");
+                
             }
 
             //nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");
