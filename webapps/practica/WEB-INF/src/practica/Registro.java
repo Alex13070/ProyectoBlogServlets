@@ -1,6 +1,8 @@
 package practica;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,24 +15,32 @@ public class Registro extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
         DB db = new DB ();
+        PrintWriter out = resp.getWriter ();
+        Optional<String> mensaje = Optional.empty ();
         
         String nombreUsuario = req.getParameter("nombreUsuario");
         String password = req.getParameter("password");
+        String password2 = req.getParameter("password2");
 
-        Usuario usuario = Usuario.builder().usuario(nombreUsuario).password(password).build();
+        if (nombreUsuario != null && password != null && password2 != null) {
+            if ( password.equals(password2)) {
 
-        if (usuario.getUsuario() != null && usuario.getPassword() != null) {
-            if (!db.existeUsuario(nombreUsuario)) {
-                db.crearUsuario(usuario);
-                //Mensaje de registro correcto
+                if (!db.existeUsuario(nombreUsuario)){
+
+                    Usuario usuario = Usuario.builder().usuario(nombreUsuario).password(password).build();
+                    db.crearUsuario(usuario);
+
+                    //Mensaje de registro correcto
+                    resp.sendRedirect(req.getContextPath() + "/iniciosesion");
+                }
+                else
+                    mensaje = Optional.of("El nombre de usuario introducido ya existe");
             }
-            else {
-                //Registro incorrecto, no se pudo introducir el usuario
-            }      
+            else 
+                mensaje = Optional.of("Las contrase&nacute;as no coinciden");
         }
-        else {
-            //no hacer nada
-        }
+
+        out.println(PlantillasHTML.paginaRegistro("Blog - Registro",  "Sin identificar", mensaje));
     }
     
 }

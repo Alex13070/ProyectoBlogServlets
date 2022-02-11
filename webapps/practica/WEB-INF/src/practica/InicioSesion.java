@@ -2,6 +2,7 @@ package practica;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,11 +26,11 @@ public class InicioSesion extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String nombreUsuarioPagina = "Sin registrar";
         PrintWriter out = resp.getWriter();
-        //String mostrar = "";
+        Optional<String> respuesta = Optional.empty();
         HttpSession session = req.getSession(false);
 
         if(session != null){
-            session.getAttribute("nombreUsuario");
+            nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");
         }
     
         if (session == null) {
@@ -49,11 +50,8 @@ public class InicioSesion extends HttpServlet{
                     resp.sendRedirect(req.getContextPath() + "/panel");
                 }
                 else {
-                    //Inicio de sesion correcto
+                    respuesta = Optional.of("Inicio de sesion fallido");
                 }                
-            }
-            else {
-                //Acceso sin inicio de sesion
             }
         }
         else {
@@ -62,6 +60,6 @@ public class InicioSesion extends HttpServlet{
         }
     
 
-        out.println(PlantillasHTML.paginaInicioSesion("Blog - Inicio de sesi&oacute;n", nombreUsuarioPagina));
+        out.println(PlantillasHTML.paginaInicioSesion("Blog - Inicio de sesi&oacute;n", nombreUsuarioPagina, respuesta));
     }
 }

@@ -31,7 +31,7 @@ public class Blog extends HttpServlet {
         HttpSession session = req.getSession(false);
 
         if(session != null){
-            session.getAttribute("nombreUsuario");
+            nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");
         }
         DB db = new DB ();
 

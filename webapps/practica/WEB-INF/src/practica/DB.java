@@ -446,14 +446,15 @@ public class DB {
                     String sqlInsert = "DELETE FROM entradas WHERE id = ?";
                     PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
                     pstmt.setInt(1, id);
-                    pstmt.executeQuery();
-                    conn.commit();
+                    pstmt.executeUpdate();
                     exito = true;
                 }
 
                 // Se cierra la conexión con la base de datos
                 conn.close();
             } catch (SQLException ex) {
+
+
                 System.err.println(ex.getMessage());
             }
         }

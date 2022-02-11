@@ -22,10 +22,11 @@ public class PlantillasHTML {
     private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     /**
-     * Plantilla para el formulario de inicio de sesion
-     * @return Plantilla lista para ser introducida
+     * Plantilla para el formulario de inicio de sesion 
+     * @param alerta Mensaje de alerta del formulario
+     * @return Plantilla renderizada a introducir
      */
-    public static ST formInicioSesion(){
+    public static String formInicioSesion(Optional<String> alerta){
 
         ST template = new ST("""
         
@@ -41,21 +42,64 @@ public class PlantillasHTML {
                     <input class='w3-input w3-margin-top w3-margin-bottom' type='text' placeholder='Nombre de usuario' name='nombreUsuario'>                            
                     <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
                     <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
+                    $alerta$
                     <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Iniciar sesion</button>
                             
                 </form>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='registro'>
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Registro</button>
+                </form>
+                
             </div>
         </div>
         
-        """, '{','}');
+        """, '$','$');
 
-        return template;
+        template.add("alerta", alerta.orElse("") + "<br>");
+
+        return template.render().toString();
     }
 
     /**
-     * Plantilla para el formulario de cambio de password
-     * @param info
-     * @return Plantilla lista para ser introducida
+     * Plantilla formulario de registro 
+     * @param alerta Mensaje de alerta del formulario
+     * @return Plantilla renderizada a introducir
+     */
+    public static String formRegistro(Optional<String> alerta){
+
+        ST template = new ST("""
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Registro de usuarios</h1>
+            </header>
+            <div class='w3-container w3-margin-top'>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='registro'>
+
+                    <label class='w3-margin-top w3-margin-bottom'>Nombre de usuario</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='text' placeholder='Nombre de usuario' name='nombreUsuario'>                            
+                    <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
+                    <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password2' placeholder='Contrase&ntilde;a' name='password2'>
+                    $alerta$
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Registrar</button>
+                            
+                </form>                
+            </div>
+        </div>
+        
+        """, '$','$');
+
+        template.add("alerta", alerta.orElse("") + "<br>");
+
+        return template.render().toString();
+    }
+
+    /**
+     * Plantilla para el formulario de cambio de password 
+     * @param alerta Mensaje de alerta del formulario
+     * @return Plantilla renderizada a introducir
      */
     public static String formCambiarPassword(Optional<String> info) {
 
@@ -67,22 +111,25 @@ public class PlantillasHTML {
             </header>
 
             <div class='w3-container w3-margin-top'>
-                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='cambiarpassword'>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='panel'>
                             
                     <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
                     <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
                     <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
                     <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Repetir contrase&ntilde;a' name='password2'>
+                    $alerta$
                     <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Cambiar contrase&ntilde;a</button>
                     
-                    $info$
                             
+                </form>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='get' action='cerrar'>
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Cerrar sesi&oacute;n</button>
                 </form>
                 
             </div>
         </div>""", '$', '$');
 
-        template.add("info", info.orElse(""));
+        template.add("alerta", info.orElse("") + "<br>");
 
         return template.render().toString();
         
@@ -287,7 +334,7 @@ public class PlantillasHTML {
      * Plantilla de la pagina principal tratada.
      * @param entradas Lista de entradas a tratar
      * @param nombreUsuario Nombre de usuario del usuario loggeado
-     * @param string
+     * @param string Titulo de la pagina web
      * @return Plantilla lista para ser introducida
      */
     public static String paginaPrincipal(List<Entrada> entradas, String nombreUsuario, String titulo) {
@@ -382,7 +429,14 @@ public class PlantillasHTML {
         return template.render().toString();
     }
 
-    public static String paginaInicioSesion(String titulo, String nombreUsuario) {
+    /**
+     * Pagina de inicio de sesion.
+     * @param titulo Titulo de la pagina web
+     * @param nombreUsuario Nombre de usuario
+     * @param valor Valor del mensaje de la alerta
+     * @return Pagina de inicio de sesion
+     */
+    public static String paginaInicioSesion(String titulo, String nombreUsuario, Optional<String> valor) {
 
         String pagina = plantillaBasePaginaWeb();
 
@@ -392,12 +446,17 @@ public class PlantillasHTML {
 
         template.add("nombreUsuario", nombreUsuario);
 
-        template.add("cuerpo", formInicioSesion().render().toString());
+        template.add("cuerpo", formInicioSesion(valor));
 
         return template.render().toString();
         
     }
 
+    /**
+     * Entradas de la pagina principal
+     * @param entradas Lista de entradas de la base de datos
+     * @return Lista en html
+     */
     public static String entradasPanelControl(List<Entrada> entradas) {
 
         StringBuffer buffer = new StringBuffer();
@@ -430,6 +489,10 @@ public class PlantillasHTML {
         
     }
 
+    /**
+     * Entrada para los paneles
+     * @return Entrada en html
+     */
     public static String entradaPanel() {
 
         return ("""
@@ -445,6 +508,14 @@ public class PlantillasHTML {
         
     }
 
+    /**
+     * Pagina del panel de control
+     * @param titulo Titulo de la pagina pagina 
+     * @param nombreUsuario nombre de usuario de la pagina web
+     * @param entradas Lista de entradas sacadas de la base de datos
+     * @param info info de vuelta de la base de datos
+     * @return HTML de la pagina panel de control
+     */
     public static String paginaPanelControl(String titulo, String nombreUsuario, List<Entrada> entradas, Optional<String> info) {
 
         ST template = new ST (plantillaBasePaginaWeb(), '$', '$');
@@ -455,6 +526,16 @@ public class PlantillasHTML {
         buffer.append(entradasPanelControl(entradas));
 
         template.add("cuerpo", buffer.toString());
+        template.add("titulo", titulo);
+        template.add("nombreUsuario", nombreUsuario);
+
+        return template.render().toString();
+    }
+
+    public static String paginaRegistro(String titulo, String nombreUsuario, Optional<String> mensaje) {
+        ST template = new ST (plantillaBasePaginaWeb(), '$', '$');
+
+        template.add("cuerpo", formRegistro(mensaje));
         template.add("titulo", titulo);
         template.add("nombreUsuario", nombreUsuario);
 

@@ -17,22 +17,27 @@ public class Borrar extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect(req.getContextPath() + "/blog");
-    }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
 
         if (session != null) {
 
             DB db = new DB ();
-            Integer id = (Integer) session.getAttribute("id");
-            db.borrarEntrada(id);
+            String id =  req.getParameter("id");
+            
+            if (id != null) {
+                db.borrarEntrada(Integer.parseInt(id));
+            }
 
+            resp.sendRedirect(req.getContextPath() + "/panel");
         }
         else
             resp.sendRedirect(req.getContextPath() + "/blog");
 
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect(req.getContextPath() + "/blog");
     }
 }
