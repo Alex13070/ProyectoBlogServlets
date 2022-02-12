@@ -71,7 +71,22 @@
       <url-pattern>/borrarusuario</url-pattern>
    </servlet-mapping>
 
+   <servlet>
+      <servlet-name>editor</servlet-name>      
+      <servlet-class>practica.Editor</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>editor</servlet-name>
+      <url-pattern>/editor</url-pattern>
+   </servlet-mapping>
 
-
+   <servlet>
+      <servlet-name>crearentrada</servlet-name>      
+      <servlet-class>practica.CrearEntrada</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>crearentrada</servlet-name>
+      <url-pattern>/crearentrada</url-pattern>
+   </servlet-mapping>
 
 </web-app>

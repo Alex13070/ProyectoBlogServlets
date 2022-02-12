@@ -357,7 +357,7 @@ public class DB {
 
                     String sqlInsert = "UPDATE entradas SET titulo = ?, texto = ?, fecha = ? WHERE id = ?";
                     PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
-                    pstmt.setString(1, entrada.getTexto());
+                    pstmt.setString(1, entrada.getTitulo());
                     pstmt.setString(2, entrada.getTexto());
                     pstmt.setLong(3, entrada.getFecha().getTime());
                     pstmt.setInt(4, entrada.getId());

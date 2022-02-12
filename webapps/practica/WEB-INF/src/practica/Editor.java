@@ -1,5 +1,10 @@
 package practica;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 
 import javax.servlet.ServletException;
@@ -16,6 +21,8 @@ import javax.servlet.http.HttpSession;
  */
 public class Editor extends HttpServlet {
 
+    private final DateFormat FORMATO = new SimpleDateFormat("yyyy-MM-dd");
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -29,53 +36,51 @@ public class Editor extends HttpServlet {
         }
     }
 
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //String nombreUsuarioPagina = "Sin registrar";
-        //PrintWriter out = resp.getWriter();
+        PrintWriter out = resp.getWriter();
         HttpSession session = req.getSession(false);
-        Optional<Entrada> entrada = Optional.empty();
+        
 
         if(session != null){
-            String id = (req.getParameter("id"));
+
+            String nombreUsuario = (String) session.getAttribute("nombreUsuario");
+
+            String id = req.getParameter("id");
             DB db = new DB ();
             
             if (id != null) {
-                
-                if (entrada.isPresent()) {
-                    Entrada e = entrada.get();
-                    
-                    e.setTitulo(extraerCaracteres(e.getTitulo()));
-                    e.setTexto(extraerCaracteres(e.getTexto()));
+                Optional<Entrada> entrada = Optional.empty();
+                entrada = db.buscarEntrada(Integer.parseInt(id));
 
-                    db.actualizarEntrada(e);
-                }
+                out.println(PlantillasHTML.paginaActualizarEntrada(entrada.get(), "Blog - Editor", nombreUsuario));
             }
             else {
-                
-            }
+                String titulo = req.getParameter("titulo");
+                String texto = req.getParameter("texto");
+                String fecha = req.getParameter("fecha");
+                String idef = req.getParameter("identificador");
 
-            //nombreUsuarioPagina = (String) session.getAttribute("nombreUsuario");
+                Date date = new Date();
+
+                try {
+                    date = FORMATO.parse(fecha);
+                } catch (ParseException e1) {
+                    e1.printStackTrace();
+                }
+
+                Entrada e = Entrada.builder().id(Integer.parseInt(idef)).titulo(titulo).texto(texto).fecha(date).build();
+
+                db.actualizarEntrada(e);
+
+                resp.sendRedirect(req.getContextPath() + "/panel");
+
+            }
         }
         else {
-            //Sesion ya iniciada
             resp.sendRedirect(req.getContextPath() + "/iniciosesion");
         }
-    }
-
-    /**
-     * Quita los caracteres especiales de los string
-     * @param str string al que hay que quitarle los parametros especiales
-     * @return String sin los parametros especiales
-     */
-    private String extraerCaracteres(String str) {
-        
-        str.replaceAll("&", "&amp;");
-        str.replaceAll("<", "&gt;");
-        str.replaceAll(">", "&lt;");
-        str.replaceAll("'", "&#039;");
-        str.replaceAll("\"", "&#034;");
-
-        return str;
     }
 }

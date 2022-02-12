@@ -1,5 +1,6 @@
 package practica;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -19,7 +20,9 @@ public class PlantillasHTML {
     /**
      * Formato de la fecha
      */
-    private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    private static final SimpleDateFormat FORMATODATE = new SimpleDateFormat("yyyy-MM-dd");
 
     /**
      * Plantilla para el formulario de inicio de sesion 
@@ -241,7 +244,7 @@ public class PlantillasHTML {
                                 <div class='collapse navbar-collapse' id='mynavbar'>
                                     <ul class='navbar-nav me-auto'>
                                         <li class='nav-item w3-margin-left w3-margin-right'>
-                                            <form action='crearentrada' method='post'>
+                                            <form action='crearentrada' method='get'>
                                                 <button class='w3-bar-item w3-button'>
                                                     <p class='w3-padding-8'>Crear entrada</p>
                                                 </button>
@@ -413,7 +416,7 @@ public class PlantillasHTML {
         ST template = new ST(
         """
         <li>
-            <a href='http://127.0.0.1:8080/practica/actualizar?id=$id$'>Editar</a>
+            <a href='http://127.0.0.1:8080/practica/editor?id=$id$'>Editar</a>
             &nbsp;
             <a href='http://127.0.0.1:8080/practica/borrar?id=$id$'>Borrar</a>
             &nbsp; &nbsp;&nbsp;
@@ -591,6 +594,94 @@ public class PlantillasHTML {
         template.add("nombreUsuario", nombreUsuario);
 
         return template.render().toString();
+    }
+
+    public static String paginaCrearEntrada(String titulo, String nombreUsuario) {
+
+        ST template = new ST (plantillaBasePaginaWeb(), '$', '$');  
+
+        template.add("cuerpo", crearEntrada(null));
+        template.add("titulo", titulo);
+        template.add("nombreUsuario", nombreUsuario);
+
+        return template.render().toString();
+    }
+
+    public static String paginaActualizarEntrada(Entrada e, String titulo, String nombreUsuario) {
+
+        ST template = new ST (plantillaBasePaginaWeb(), '$', '$');  
+
+        template.add("cuerpo", crearEntrada(e));
+        template.add("titulo", titulo);
+        template.add("nombreUsuario", nombreUsuario);
+
+        return template.render().toString();
+    }
+
+    
+
+    private static String crearEntrada(Entrada entrada) {
+
+        ST template = new ST ("""
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Editor de entradas</h1>
+            </header>
+
+            <div class='w3-container w3-margin-top'>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='get' action='$accion$'>
+                    
+                    <input type='hidden' value='$id$' name='identificador'>
+                    <label class='w3-margin-top w3-margin-bottom'>T&iacute;tulo</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' placeholder='T&iacute;tulo' name='titulo' value='$titulo$'>
+                    <label class='w3-margin-top w3-margin-bottom'>Texto</label>
+                    <textarea class='w3-input w3-margin-top w3-margin-bottom' placeholder='Cuerpo del blog' name='texto'>$texto$</textarea>
+                    <label class='w3-margin-top w3-margin-bottom'>Fecha</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='date' placeholder='T&iacute;tulo' name='fecha' value='$fecha$'>
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>$textoboton$</button>
+                                
+                </form>
+            </div>
+        </div>
+        """, '$','$');
+
+        if (entrada == null) {
+            template.add("titulo", "");
+            template.add("fecha", "");
+            template.add("texto", "");
+            template.add("accion", "crearentrada");
+            template.add("textoboton", "Crear entrada");
+        }
+        else {
+            template.add("id", entrada.getId());
+            template.add("titulo", extraerCaracteres(entrada.getTitulo()));
+            template.add("texto", extraerCaracteres(entrada.getTexto()));
+            template.add("accion", "editor");
+            template.add("textoboton", "Actualizar entrada");
+            template.add("fecha", (FORMATODATE.format(entrada.getFecha())));
+        }
+
+
+        return template.render().toString();
+    }
+
+    
+
+    /**
+     * Quita los caracteres especiales de los string
+     * @param str string al que hay que quitarle los parametros especiales
+     * @return String sin los parametros especiales
+     */
+    private static String extraerCaracteres(String str) {
+        
+        str.replaceAll("&", "&amp;");
+        str.replaceAll("<", "&gt;");
+        str.replaceAll(">", "&lt;");
+        str.replaceAll("'", "&#039;");
+        str.replaceAll("\"", "&#034;");
+
+        return str;
     }
 }
 
