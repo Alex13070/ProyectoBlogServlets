@@ -89,4 +89,31 @@
       <url-pattern>/crearentrada</url-pattern>
    </servlet-mapping>
 
+   <servlet>
+      <servlet-name>administracionusuarios</servlet-name>      
+      <servlet-class>practica.AdministracionUsuarios</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>administracionusuarios</servlet-name>
+      <url-pattern>/administracionusuarios</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>actualizarusuario</servlet-name>      
+      <servlet-class>practica.ActualizarUsuario</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>actualizarusuario</servlet-name>
+      <url-pattern>/actualizarusuario</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>buscarentrada</servlet-name>      
+      <servlet-class>practica.BuscarEntrada</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>buscarentrada</servlet-name>
+      <url-pattern>/buscarentrada</url-pattern>
+   </servlet-mapping>
+
 </web-app>

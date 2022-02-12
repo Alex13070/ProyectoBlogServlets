@@ -28,7 +28,10 @@ public class DB {
      */
     private final String CLASE = "org.sqlite.JDBC";
 
-
+    
+    /**
+     * Constructor por defecto de la clase
+     */
     public DB() {
         try {
             Class.forName(CLASE).getDeclaredConstructor().newInstance();
@@ -36,6 +39,15 @@ public class DB {
             System.err.println("Error al crear los drivers de la base de datos.");
         }
     }
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Creacion de campos para la base de datos
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
 
     /**
      * Funcion para crear tablas en la base de datos.
@@ -62,55 +74,7 @@ public class DB {
             }
         }
     }
-
-    /**
-     * Funcion para crear las tablas en la clase instalador
-     */
-    public void crearTablas() {
-
-        crearTabla(
-                """
-                        CREATE TABLE IF NOT EXISTS usuarios (
-                            usuario TEXT PRIMARY KEY,
-                            password TEXT
-                        );
-                        """);
-
-        crearTabla(
-                """
-                        CREATE TABLE IF NOT EXISTS entradas (
-                            id INTEGER PRIMARY KEY AUTOINCREMENT,
-                            titulo TEXT,
-                            texto TEXT,
-                            fecha INTEGER
-                        );
-                        """);
-
-
-        Entrada entrada = new Entrada(0,
-                "titulo",
-                "relleno relleno relleno relleno relleno relleno relleno relleno relleno relleno relleno",
-                new Date(1644079620365L));
-
-        try {
-            crearEntrada(entrada);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        
-        Usuario usuario = new Usuario("admin", "admin");
-
-        try {
-            crearUsuario(usuario);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-
-        
-
-    }
-
+    
     /**
      * Introduccion de usuarios en la base de datos.
      * 
@@ -133,7 +97,7 @@ public class DB {
                     String sqlInsert = "INSERT INTO usuarios (usuario, password) VALUES (?, ?)";
                     PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
                     pstmt.setString(1, usuario.getUsuario());
-                    pstmt.setString(2, usuario.getPassword());
+                    pstmt.setString(2, MD5.encriptar(usuario.getPassword()));
                     pstmt.executeUpdate();
                     
                     exito = true;
@@ -185,6 +149,69 @@ public class DB {
         return exito;
     }
 
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Creacion de la base de datos.
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+
+    /**
+     * Funcion para crear las tablas en la clase instalador
+     */
+    public void crearTablas() {
+
+        crearTabla(
+                """
+                        CREATE TABLE IF NOT EXISTS usuarios (
+                            usuario TEXT PRIMARY KEY,
+                            password TEXT
+                        );
+                        """);
+
+        crearTabla(
+                """
+                        CREATE TABLE IF NOT EXISTS entradas (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            titulo TEXT,
+                            texto TEXT,
+                            fecha INTEGER
+                        );
+                        """);
+
+
+        Entrada entrada = new Entrada(0,
+                "titulo",
+                "relleno relleno relleno relleno relleno relleno relleno relleno relleno relleno relleno",
+                new Date(1644079620365L));
+
+        try {
+            crearEntrada(entrada);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        Usuario usuario = new Usuario("admin", "admin");
+
+        try {
+            crearUsuario(usuario);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Consultas usuario
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+
+    
     /**
      * Comprueba el usuario y password del usuario
      * 
@@ -206,7 +233,7 @@ public class DB {
                     String sqlInsert = "SELECT usuario, password FROM usuarios WHERE usuario LIKE ? AND password LIKE ?";
                     PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
                     pstmt.setString(1, usuario.getUsuario());
-                    pstmt.setString(2, usuario.getPassword());
+                    pstmt.setString(2, MD5.encriptar(usuario.getPassword()));
                     ResultSet cursor = pstmt.executeQuery();
 
                     if (cursor.next()) {
@@ -265,6 +292,119 @@ public class DB {
     }
 
     /**
+     * Funcion para cambiar la password del usuario
+     * 
+     * @param usuario Usuario que queremos actualizar
+     * @return {@code true} Si se ha podido actualizar el usuario correctamente
+     *         {@code false} Si no se ha podido actualizar el usuario
+     */
+    public boolean cambiarPassword(Usuario usuario) {
+        boolean exito = false;
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    String sqlInsert = "UPDATE usuarios SET password = ? WHERE usuario = ?";
+                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    pstmt.setString(1, MD5.encriptar(usuario.getPassword()));
+                    pstmt.setString(2, usuario.getUsuario());
+                    
+                    pstmt.executeUpdate();
+                    
+                    exito = true;
+                }
+                // Se cierra la conexión con la base de datos
+                conn.close();
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+
+        return exito;
+    }
+
+    /**
+     * Devuelve todos los usuarios de la base de datos
+     * @return Lista de usuarios de la base de datos
+     */
+    public List<Usuario> getUsuarios() {
+
+        List<Usuario> usuarios = new ArrayList<Usuario>();
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+
+                    String sqlInsert = "SELECT usuario, password FROM usuarios";
+                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    ResultSet cursor = pstmt.executeQuery();
+
+                    while (cursor.next()) {
+                        usuarios.add(
+                            Usuario.builder()
+                            .usuario(cursor.getString(1))
+                            .password(cursor.getString(2))
+                            .build()
+                        );
+                    }
+
+                }
+                // Se cierra la conexión con la base de datos
+                conn.close();
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+
+
+        return usuarios;
+    }
+
+    public boolean borrarUsuario(String nombreUsuario) {
+        boolean exito = false;
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+
+                    String sqlInsert = "DELETE FROM usuarios WHERE usuario = ?";
+                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    pstmt.setString (1, nombreUsuario);
+                    pstmt.executeUpdate();
+                    exito = true;
+                }
+
+                // Se cierra la conexión con la base de datos
+                conn.close();
+            } catch (SQLException ex) {
+
+
+                System.err.println(ex.getMessage());
+            }
+        }
+
+        return exito;
+    }
+
+    ////////////////////////////////////////////////////////////////
+
+    //Consultas entradas
+
+    ////////////////////////////////////////////////////////////////
+
+    /**
      * Funcion para conseguir todas las entradas de la base de datos.
      * 
      * @return Lista de entradas.
@@ -291,7 +431,7 @@ public class DB {
                         e.setId(cursor.getInt(1));
                         e.setTitulo(cursor.getString(2));
                         e.setTexto(cursor.getString(3));
-                        e.setFecha(new Date(cursor.getInt(4)));
+                        e.setFecha(new Date(cursor.getLong(4)));
 
                         entradas.add(e);
                     }
@@ -306,42 +446,6 @@ public class DB {
 
         return entradas;
 
-    }
-    
-    /**
-     * Funcion para cambiar la password del usuario
-     * 
-     * @param usuario Usuario que queremos actualizar
-     * @return {@code true} Si se ha podido actualizar el usuario correctamente
-     *         {@code false} Si no se ha podido actualizar el usuario
-     */
-    public boolean cambiarPassword(Usuario usuario) {
-        boolean exito = false;
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(URL);
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-        } finally {
-            try {
-                if (conn != null) {
-                    String sqlInsert = "UPDATE usuarios SET password = ? WHERE usuario = ?";
-                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
-                    pstmt.setString(1, usuario.getPassword());
-                    pstmt.setString(2, usuario.getUsuario());
-                    
-                    pstmt.executeUpdate();
-                    
-                    exito = true;
-                }
-                // Se cierra la conexión con la base de datos
-                conn.close();
-            } catch (SQLException ex) {
-                System.err.println(ex.getMessage());
-            }
-        }
-
-        return exito;
     }
     
     public void actualizarEntrada(Entrada entrada) {
@@ -456,9 +560,8 @@ public class DB {
 
     }
 
-    public List<String> getUsuarios() {
-
-        List<String> usuarios = new ArrayList<String>();
+    public List<Entrada> getEntradas(String string) {
+        List<Entrada> entradas = new ArrayList<Entrada>();
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(URL);
@@ -468,13 +571,21 @@ public class DB {
             try {
                 if (conn != null) {
 
-                    String sqlInsert = "SELECT usuario FROM usuarios";
+                    String sqlInsert = "SELECT id, titulo, texto, fecha FROM entradas WHERE titulo LIKE ?";
                     PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
+                    pstmt.setString(1, string + "%");    
                     ResultSet cursor = pstmt.executeQuery();
 
-                    while (cursor.next()) 
-                        usuarios.add(cursor.getString(1));
+                    while (cursor.next()) {
+                        Entrada e = new Entrada();
 
+                        e.setId(cursor.getInt(1));
+                        e.setTitulo(cursor.getString(2));
+                        e.setTexto(cursor.getString(3));
+                        e.setFecha(new Date(cursor.getLong(4)));
+
+                        entradas.add(e);
+                    }
                 }
                 // Se cierra la conexión con la base de datos
                 conn.close();
@@ -482,39 +593,7 @@ public class DB {
                 System.err.println(ex.getMessage());
             }
         }
-
-
-        return usuarios;
-    }
-
-    public boolean borrarUsuario(String nombreUsuario) {
-        boolean exito = false;
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(URL);
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-        } finally {
-            try {
-                if (conn != null) {
-
-                    String sqlInsert = "DELETE FROM usuarios WHERE usuario = ?";
-                    PreparedStatement pstmt = conn.prepareStatement(sqlInsert);
-                    pstmt.setString (1, nombreUsuario);
-                    pstmt.executeUpdate();
-                    exito = true;
-                }
-
-                // Se cierra la conexión con la base de datos
-                conn.close();
-            } catch (SQLException ex) {
-
-
-                System.err.println(ex.getMessage());
-            }
-        }
-
-        return exito;
+        return entradas;
     }
 
 

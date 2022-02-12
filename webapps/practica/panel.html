@@ -51,9 +51,9 @@
 
     <body>
 
-        <div class='w3-sidebar w3-bar-block w3-card w3-animate-left' style='display:none' id='mySidebar'>
+        <div class='w3-sidebar w3-bar-block w3-card w3-animate-left ' style='display:none' id='mySidebar'>
 
-            <button class='w3-bar-item w3-button w3-large ' onclick='w3_close()'>
+            <button class='w3-bar-item w3-button w3-large' onclick='w3_close()'>
                 Cerrar &times;
             </button>
 
@@ -69,7 +69,7 @@
 
             <form action='crearEntrada' method='get'>
                 <button class='w3-bar-item w3-button'><p class='w3-padding-8'>Crear entrada</p></button>
-            </form>
+            </form> 
 
         </div>
 
@@ -80,7 +80,7 @@
                 <nav class='navbar navbar-expand-sm navbar-dark w3-indigo'>
                     
                     <div class='w3-margin-left'>
-                        <button id='openNav' class='w3-button w3-indigo w3-xlarge' onclick='w3_open()'>&#9776; </button>
+                        <button id='openNav' class='w3-button w3-indigo w3-xlarge .d-none .d-md-block .d-lg-none' onclick='w3_open()'>&#9776; </button>
                     </div>
 
                     <div class='container-fluid'>
@@ -151,61 +151,28 @@
                 <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
 
                     <header class='w3-container w3-pink'>
-                        <h1>Cambiar de contrase&ntilde;a</h1>
+                        <h1>Administraci&oacute;n de usuarios</h1>
                     </header>
 
                     <div class='w3-container w3-margin-top'>
-                        <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='cambiarpassword'>
-                            
-                            <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
-                            <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
-                            <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
-                            <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Repetir contrase&ntilde;a' name='password2'>
-                            <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Cambiar contrase&ntilde;a</button>
-                                
-                            
+
+                        <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='registro'>
+                            <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Registrar usuario</button>
                         </form>
-                    </div>
 
-                </div>
+                        <ul class="w3-ul w3-hoverable w3-margin-bottom w3-centered">
+                            <li>
+                                
+                                <form class='d-flex w3-margin-left w3-margin-right w3-padding-32' action='hola' method='get'>
+                                    <input type='hidden' name='nombreusuario' value='$nombreUsuario$' />
+                                    <a href='http://127.0.0.1:8080/practica/borrarusuario?nombreUsuario=$nombreUsuario$'>Borrar</a>
+                                    
+                                    <p class='w3-margin-left w3-margin-right'>$nombreUsuario$</p>
+                                    <input class='form-control me-2  w3-margin-left' type='text' placeholder='Contrase&ntilde;a' style='width: 30%' value='$password$'>
+                                    <button class='btn btn-primary'>Actualizar</button>
+                                </form>
 
-                <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
-
-                    <header class='w3-container w3-pink'>
-                        <h1>Entradas</h1>
-                    </header>
-
-                    <div class='w3-container w3-margin-top'>
-                        <ul class="w3-ul w3-hoverable w3-margin-bottom">
-                            <li>
-                                <a href="http://127.0.0.1:8080/practica/borrar?id=$idEntrada$">Editar</a>
-                                &nbsp;
-                                <a href="http://127.0.0.1:8080/practica/editar?id=$idEntrada$">Borrar</a>
-                                &nbsp; &nbsp;&nbsp;
-                                Titulo
                             </li>
-                            <li>
-                                <a href="http://127.0.0.1:8080/practica/borrar?id=$idEntrada$">Editar</a>
-                                &nbsp;
-                                <a href="http://127.0.0.1:8080/practica/editar?id=$idEntrada$">Borrar</a>
-                                &nbsp; &nbsp;&nbsp;
-                                Titulo
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:8080/practica/borrar?id=$idEntrada$">Editar</a>
-                                &nbsp;
-                                <a href="http://127.0.0.1:8080/practica/editar?id=$idEntrada$">Borrar</a>
-                                &nbsp; &nbsp;&nbsp;
-                                Titulo
-                            </li>
-                            <li>
-                                <a href="http://127.0.0.1:8080/practica/borrar?id=$idEntrada$">Editar</a>
-                                &nbsp;
-                                <a href="http://127.0.0.1:8080/practica/editar?id=$idEntrada$">Borrar</a>
-                                &nbsp; &nbsp;&nbsp;
-                                Titulo
-                            </li>
-                            
                         </ul>
                     </div>
 

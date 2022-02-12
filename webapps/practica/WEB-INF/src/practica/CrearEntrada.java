@@ -2,6 +2,7 @@ package practica;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,8 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * @author @Alex13070
+ * 
+ * Servlet para crear entradas en la base de datos.
+ */
 public class CrearEntrada extends HttpServlet {
 
+    /**
+     * Formato de fecha definido,
+     */
     private final DateFormat format = new SimpleDateFormat ("yyyy-MM-dd");
 
     @Override
@@ -39,17 +48,20 @@ public class CrearEntrada extends HttpServlet {
             String titulo = req.getParameter("titulo");
             String texto = req.getParameter("texto");
             String fecha = req.getParameter("fecha");
+            Date date;
 
             if (titulo != null && texto != null && fecha != null) {
 
                 try {
-                    entrada = Entrada.builder().titulo(titulo).texto(texto).fecha(format.parse(fecha)).build();
-                    DB db = new DB ();
-                    db.crearEntrada(entrada);
-
+                    date = format.parse(fecha);
                 } catch (ParseException e) {
                     System.out.println("Error en la fecha");
+                    date = new Date ();
                 }
+
+                entrada = Entrada.builder().titulo(titulo).texto(texto).fecha(date).build();
+                DB db = new DB ();
+                db.crearEntrada(entrada);
 
                 resp.sendRedirect(req.getContextPath() + "/panel");
             }    

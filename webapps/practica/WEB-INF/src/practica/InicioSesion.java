@@ -46,7 +46,7 @@ public class InicioSesion extends HttpServlet{
                     //Inicio de sesion correcto
                     session = req.getSession(true);
                     session.setAttribute("nombreUsuario", nombreUsuario);
-                    session.setMaxInactiveInterval(120);
+                    session.setMaxInactiveInterval(600);
                     resp.sendRedirect(req.getContextPath() + "/panel");
                 }
                 else {

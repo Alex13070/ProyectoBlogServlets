@@ -1,10 +1,6 @@
 package practica;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,130 +16,14 @@ public class PlantillasHTML {
     /**
      * Formato de la fecha
      */
-    private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
     private static final SimpleDateFormat FORMATODATE = new SimpleDateFormat("yyyy-MM-dd");
 
     /**
-     * Plantilla para el formulario de inicio de sesion 
-     * @param alerta Mensaje de alerta del formulario
-     * @return Plantilla renderizada a introducir
+     * Aqui se almacena la pagina
+     * @return
      */
-    public static String formInicioSesion(Optional<String> alerta){
-
-        ST template = new ST("""
-        
-        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
-
-            <header class='w3-container w3-pink'>
-                <h1>Inicio de sesi&oacute;n</h1>
-            </header>
-            <div class='w3-container w3-margin-top'>
-                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='iniciosesion'>
-
-                    <label class='w3-margin-top w3-margin-bottom'>Nombre de usuario</label>
-                    <input class='w3-input w3-margin-top w3-margin-bottom' type='text' placeholder='Nombre de usuario' name='nombreUsuario'>                            
-                    <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
-                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
-                    $alerta$
-                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Iniciar sesion</button>
-                            
-                </form>
-                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='registro'>
-                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Registro</button>
-                </form>
-                
-            </div>
-        </div>
-        
-        """, '$','$');
-
-        template.add("alerta", alerta.orElse("") + "<br>");
-
-        return template.render().toString();
-    }
-
-    /**
-     * Plantilla formulario de registro 
-     * @param alerta Mensaje de alerta del formulario
-     * @return Plantilla renderizada a introducir
-     */
-    public static String formRegistro(Optional<String> alerta){
-
-        ST template = new ST("""
-        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
-
-            <header class='w3-container w3-pink'>
-                <h1>Registro de usuarios</h1>
-            </header>
-            <div class='w3-container w3-margin-top'>
-                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='registro'>
-
-                    <label class='w3-margin-top w3-margin-bottom'>Nombre de usuario</label>
-                    <input class='w3-input w3-margin-top w3-margin-bottom' type='text' placeholder='Nombre de usuario' name='nombreUsuario'>                            
-                    <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
-                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
-                    <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
-                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password2'>
-                    $alerta$
-                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Registrar</button>
-                            
-                </form>                
-            </div>
-        </div>
-        
-        """, '$','$');
-
-        template.add("alerta", alerta.orElse("") + "<br>");
-
-        return template.render().toString();
-    }
-
-    /**
-     * Plantilla para el formulario de cambio de password 
-     * @param alerta Mensaje de alerta del formulario
-     * @return Plantilla renderizada a introducir
-     */
-    public static String formCambiarPassword(Optional<String> info) {
-
-        ST template = new ST ("""
-        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
-
-            <header class='w3-container w3-pink'>
-                <h1>Cambiar de contrase&ntilde;a</h1>
-            </header>
-
-            <div class='w3-container w3-margin-top'>
-                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='panel'>
-                            
-                    <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
-                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
-                    <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
-                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Repetir contrase&ntilde;a' name='password2'>
-                    $alerta$
-                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Cambiar contrase&ntilde;a</button>
-                    
-                            
-                </form>
-                <form class='w3-container' style='width: 60%; margin: 0 auto' method='get' action='cerrar'>
-                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Cerrar sesi&oacute;n</button>
-                </form>
-                
-            </div>
-        </div>""", '$', '$');
-
-        template.add("alerta", info.orElse("") + "<br>");
-
-        return template.render().toString();
-        
-    }
-
-    /**
-     * Plantilla base de la pagina web
-     * @return Plantilla lista para ser tratada
-     */
-    public static String plantillaBasePaginaWeb() {
-        return ("""
+    private final static String PLANTILLA_BASE =
+    """
         <!DOCTYPE html>
         <html>
 
@@ -204,8 +84,8 @@ public class PlantillasHTML {
                     </button>
 
 
-                    <form class='d-flex w3-margin-left w3-margin-right w3-padding-32' action='hola' method='get'>
-                        <input class='form-control me-2' type='text' placeholder='Search'>
+                    <form class='d-flex w3-margin-left w3-margin-right w3-padding-32' action='buscarentrada' method='get'>
+                        <input class='form-control me-2' type='text' placeholder='Search' name='nombre'>
                         <button class='btn btn-primary'><i class='fa fa-search'></i></button>
                     </form>
 
@@ -264,7 +144,7 @@ public class PlantillasHTML {
                                     </div>
 
                                     <form class='d-flex' method='get' action='buscarentrada'>
-                                        <input class='form-control me-2' type='text' placeholder='Search'>
+                                        <input class='form-control me-2' type='text' placeholder='Search' name='nombre'>
                                         <button class='btn btn-primary'><i class='fa fa-search'></i></button>
                                     </form>
                                 </div>
@@ -298,16 +178,75 @@ public class PlantillasHTML {
             </body>
         </html>
         
-        """);
+        """;
+    public static String ENTRADA_PANEL =
+        """
+            <li>
+                <a href='http://127.0.0.1:8080/practica/borrar?id=$idEntrada$'>Borrar</a>
+                &nbsp;
+                <a href='http://127.0.0.1:8080/practica/editor?id=$idEntrada$'>Editar</a>
+                
+                &nbsp; &nbsp;&nbsp;
+                $tituloEntrada$
+            </li>
+            
+        """;
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Pagina inicial
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    /**
+     * Pagina principal del blog --> Servlet blog / buscarentrada
+     * @param entradas Lista de entradas a mostrar 
+     * @param nombreUsuario Nombre de usuario de la pagina web 
+     * @param titulo Titulo de la pagina web 
+     * @param sesion Indica si hay sesion o no
+     * @return String de la pagina principal
+     */
+    public static String paginaPrincipal(List<Entrada> entradas, String nombreUsuario, String titulo, boolean sesion) {
+
+        String pagina = PLANTILLA_BASE;
+
+        ST template = new ST(pagina, '$', '$');
+
+        template.add("cuerpo", recogerEntradas(entradas, sesion));
+        template.add("nombreUsuario", nombreUsuario);
+        template.add("titulo", titulo);
+
+        return template.render().toString();
         
     }
 
     /**
-     * Plantilla para crear entradas
-     * @param e Entrada a introducir en la plantilla
-     * @return Plantilla lista para ser introducida
+     * Emplea la funcion que parsea entradas y ordena por fecha
+     * @param entradas Lista de entradas a parsear
+     * @param sesion Indica si hay sesion o no
+     * @return Devuelve las entradas parseada
      */
-    public static String entradaCompleta(Entrada e) {
+    private static String recogerEntradas(List<Entrada> entradas, boolean sesion) {
+        StringBuffer buffer = new StringBuffer();
+
+        entradas.sort((o1,o2) -> o1.getFecha().compareTo(o2.getFecha()));
+
+        for (Entrada entrada : entradas) {
+            buffer.append(entradaCompleta(entrada, sesion));
+        }
+
+        return buffer.toString();
+    }
+
+    /**
+     * Entrada lista para introducir
+     * @param e Entrada a mostrar
+     * @param sesion Dice si hay sesion
+     * @return String con la entrada convertida a html
+     */
+    public static String entradaCompleta(Entrada e, boolean sesion) {
         ST template = new ST (
         """
         <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
@@ -320,72 +259,289 @@ public class PlantillasHTML {
                 </p>
             </div>
             <footer class='w3-container w3-white'>
+                $editor$
                 <h5 class='w3-right'>$fecha$</h5>
             </footer>
         </div>
         """, '$','$');
 
-        template.add("titulo", e.getTitulo());
-        template.add("texto", e.getTexto());
-        template.add("fecha", convertirFechas(e.getFecha()));
+        if (sesion){
+            ST st = new ST ( """
+            <p class='w3-left'>
+                <a href='http://127.0.0.1:8080/practica/borrar?id=$idEntrada$'>Borrar</a>
+                &nbsp;
+                <a href='http://127.0.0.1:8080/practica/editor?id=$idEntrada$'>Editar</a>
+            </p>
+            """, '$','$');
 
-        return template.render().toString();
-        
-    }
-
-    /**
-     * Plantilla de la pagina principal tratada.
-     * @param entradas Lista de entradas a tratar
-     * @param nombreUsuario Nombre de usuario del usuario loggeado
-     * @param string Titulo de la pagina web
-     * @return Plantilla lista para ser introducida
-     */
-    public static String paginaPrincipal(List<Entrada> entradas, String nombreUsuario, String titulo) {
-
-        String pagina = plantillaBasePaginaWeb();
-
-        ST template = new ST(pagina, '$', '$');
-
-        template.add("cuerpo", recogerEntradas(entradas));
-        template.add("nombreUsuario", nombreUsuario);
-        template.add("titulo", titulo);
-
-        return template.render().toString();
-        
-    }
-
-    /**
-     * Conversor de Date a LocalDate formateado
-     * @param fecha fecha por defecto
-     * @return Fecha formateada
-     */
-    private static String convertirFechas(Date fecha) {
-        return LocalDate.ofInstant(fecha.toInstant(), ZoneId.systemDefault()).format(FORMATO);
-    }
-
-    /**
-     * Conversor de coleccion de entradas a un string con todas las entradas
-     * @param entradas Coleccion de entradas sacadas de la base de datos
-     * @return Codigo a introducir en la pagina web
-     */
-    private static String recogerEntradas(List<Entrada> entradas) {
-        StringBuffer buffer = new StringBuffer();
-
-        entradas.sort((o1,o2) -> o1.getFecha().compareTo(o2.getFecha()));
-
-        for (Entrada entrada : entradas) {
-            buffer.append(entradaCompleta(entrada));
+            st.add("idEntrada", e.getId());
+            template.add("editor", st.render().toString());
+        }
+        else {
+            template.add("editor", "");
         }
 
-        return buffer.toString();
+        template.add("titulo", extraerCaracteres(e.getTitulo()));
+        template.add("texto", extraerCaracteres(e.getTexto()));
+        template.add("fecha", FORMATODATE.format(e.getFecha()));
+
+        return template.render().toString();
+        
+    }
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Pagina de inicio de sesion
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    /**
+     * Pagina de inicio de sesion formateada
+     * @param titulo titulo de la pagina web
+     * @param nombreUsuario Nombre de usuario de la pagina web
+     * @param valor Alerta a mostrar
+     * @return String con la pagina de inicio de sesion formateada
+     */
+    public static String paginaInicioSesion(String titulo, String nombreUsuario, Optional<String> valor) {
+
+        String pagina = PLANTILLA_BASE;
+
+        ST template = new ST (pagina, '$', '$');
+
+        template.add("titulo", titulo);
+
+        template.add("nombreUsuario", nombreUsuario);
+
+        template.add("cuerpo", formInicioSesion(valor));
+
+        return template.render().toString();
+        
+    }
+
+
+
+    /**
+     * Formulario de inicio de sesion tratado con una alerta
+     * @param alerta alerta a mostrar
+     * @return formulario tratado
+     */
+    public static String formInicioSesion(Optional<String> alerta){
+
+        ST template = new ST("""
+        
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Inicio de sesi&oacute;n</h1>
+            </header>
+            <div class='w3-container w3-margin-top'>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='iniciosesion'>
+
+                    <label class='w3-margin-top w3-margin-bottom'>Nombre de usuario</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='text' placeholder='Nombre de usuario' name='nombreUsuario'>                            
+                    <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
+                    $alerta$
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Iniciar sesion</button>
+                            
+                </form>                
+            </div>
+        </div>
+        
+        """, '$','$');
+
+        template.add("alerta", alerta.orElse("") + "<br>");
+
+        return template.render().toString();
+    }
+
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Pagina registro
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    /**
+     * Pagina de inicio de sesion formateada
+     * @param titulo titulo de la pagina web
+     * @param nombreUsuario Nombre de usuario de la pagina web
+     * @param mensaje Alerta a mostrar
+     * @return String con la pagina de inicio de sesion formateada
+     */
+    public static String paginaRegistro(String titulo, String nombreUsuario, Optional<String> mensaje) {
+        ST template = new ST (PLANTILLA_BASE, '$', '$');
+
+        template.add("cuerpo", formRegistro(mensaje));
+        template.add("titulo", titulo);
+        template.add("nombreUsuario", nombreUsuario);
+
+        return template.render().toString();
     }
 
     /**
-     * Devuelve la lista de entradas que se encesitan para el panel de control
-     * @param entradas Lista de entradas sacadas de la base de datos
-     * @return String en el que esta la pagina web que escribiremos
+     * Formulario de registro tratado con una alerta
+     * @param alerta alerta a mostrar
+     * @return formulario tratado
      */
-    public static String listaEntradas(List<Entrada> entradas) {
+    public static String formRegistro(Optional<String> alerta){
+
+        ST template = new ST("""
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Registro de usuarios</h1>
+            </header>
+            <div class='w3-container w3-margin-top'>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='registro'>
+
+                    <label class='w3-margin-top w3-margin-bottom'>Nombre de usuario</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='text' placeholder='Nombre de usuario' name='nombreUsuario'>                            
+                    <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
+                    <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password2'>
+                    $alerta$
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Registrar</button>
+                            
+                </form>                
+            </div>
+        </div>
+        
+        """, '$','$');
+
+        template.add("alerta", alerta.orElse("") + "");
+
+        return template.render().toString();
+    }
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Pagina panel de control
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    /**
+     * Pagina de panel de control formateada
+     * @param titulo titulo de la pagina web
+     * @param nombreUsuario Nombre de usuario de la pagina web
+     * @param entradas Entradas a mostrar
+     * @param info Mensajes de informacion 
+     * @return String con la pagina en html
+     */
+    public static String paginaPanelControl(String titulo, String nombreUsuario, List<Entrada> entradas, Optional<String> info) {
+
+        ST template = new ST (PLANTILLA_BASE, '$', '$');
+
+        StringBuffer buffer = new StringBuffer();
+        
+        buffer.append(formCambiarPassword(info, nombreUsuario));
+        buffer.append(entradasPanelControl(entradas));
+
+        template.add("cuerpo", buffer.toString());
+        template.add("titulo", titulo);
+        template.add("nombreUsuario", nombreUsuario);
+
+        return template.render().toString();
+    }
+
+    /**
+     * Formulario de cambio de password tratado con una alerta
+     * @param alerta alerta a mostrar
+     * @return formulario tratado
+     */
+    public static String formCambiarPassword(Optional<String> info, String nombreUsuario) {
+
+        ST template = new ST ("""
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Cambiar de contrase&ntilde;a</h1>
+            </header>
+
+            <div class='w3-container w3-margin-top'>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='actualizarusuario'>
+                    <input type='hidden' name='nombreUsuario' value='$nombreUsuario$' />
+                    <label class='w3-margin-top w3-margin-bottom'>Contrase&ntilde;a</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Contrase&ntilde;a' name='password'>
+                    <label class='w3-margin-top w3-margin-bottom'>Repetir contrase&ntilde;a</label>
+                    <input class='w3-input w3-margin-top w3-margin-bottom' type='password' placeholder='Repetir contrase&ntilde;a' name='password2'>
+                    $alerta$
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Cambiar contrase&ntilde;a</button>
+                    
+                            
+                </form>
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='get' action='cerrar'>
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Cerrar sesi&oacute;n</button>
+                </form>
+                $admin$
+                
+            </div>
+        </div>""", '$', '$');
+
+        template.add("alerta", info.orElse("") + "<br>");
+
+        if (nombreUsuario.equals("admin")) {
+            template.add("admin", """
+            <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='administracionusuarios'>
+                <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Administracion de usuarios</button>
+            </form>
+            """);
+        }
+        else
+            template.add("admin", "");
+
+        template.add("nombreUsuario", nombreUsuario);
+
+        return template.render().toString();
+        
+    }
+
+    /**
+     * Tratamiento de entradas para mostar en el panel de control
+     * @param entradas Entradas a tratar
+     * @return Entradas tratadas
+     */
+    public static String entradasPanelControl(List<Entrada> entradas) {
+
+        StringBuffer buffer = new StringBuffer();
+
+        buffer.append("""
+        
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Entradas</h1>
+            </header>
+
+            <div class='w3-container w3-margin-top'>
+                <ul class='w3-ul w3-hoverable w3-margin-bottom'>
+        """);
+
+        for (Entrada entrada : entradas) {
+            ST template = new ST (ENTRADA_PANEL, '$', '$');
+
+            template.add("idEntrada", entrada.getId().toString());
+            template.add("tituloEntrada", entrada.getTitulo());
+
+            buffer.append(template.render().toString());
+
+        }
+
+        buffer.append("</ul></div></div>");
+
+        return buffer.toString();
+        
+    }
+    
+    /*
+    private static String listaEntradas(List<Entrada> entradas) {
         StringBuffer buffer = new StringBuffer();
 
         buffer.append("""
@@ -406,12 +562,8 @@ public class PlantillasHTML {
 
         return buffer.toString();
     }
+    
 
-    /**
-     * Escribe cada entrada pasandola a html.
-     * @param entrada Entrada a convertir a html
-     * @return Entrada convertida a String html
-     */
     private static String updateDelete(Entrada entrada) {
         ST template = new ST(
         """
@@ -431,86 +583,7 @@ public class PlantillasHTML {
 
         return template.render().toString();
     }
-
-    /**
-     * Pagina de inicio de sesion.
-     * @param titulo Titulo de la pagina web
-     * @param nombreUsuario Nombre de usuario
-     * @param valor Valor del mensaje de la alerta
-     * @return Pagina de inicio de sesion
-     */
-    public static String paginaInicioSesion(String titulo, String nombreUsuario, Optional<String> valor) {
-
-        String pagina = plantillaBasePaginaWeb();
-
-        ST template = new ST (pagina, '$', '$');
-
-        template.add("titulo", titulo);
-
-        template.add("nombreUsuario", nombreUsuario);
-
-        template.add("cuerpo", formInicioSesion(valor));
-
-        return template.render().toString();
-        
-    }
-
-    /**
-     * Entradas de la pagina principal
-     * @param entradas Lista de entradas de la base de datos
-     * @return Lista en html
-     */
-    public static String entradasPanelControl(List<Entrada> entradas) {
-
-        StringBuffer buffer = new StringBuffer();
-
-        buffer.append("""
-        
-        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
-
-            <header class='w3-container w3-pink'>
-                <h1>Entradas</h1>
-            </header>
-
-            <div class='w3-container w3-margin-top'>
-                <ul class='w3-ul w3-hoverable w3-margin-bottom'>
-        """);
-
-        for (Entrada entrada : entradas) {
-            ST template = new ST (entradaPanel(), '$', '$');
-
-            template.add("idEntrada", entrada.getId().toString());
-            template.add("tituloEntrada", entrada.getTitulo());
-
-            buffer.append(template.render().toString());
-
-        }
-
-        buffer.append("</ul></div></div>");
-
-        return buffer.toString();
-        
-    }
-
-    /**
-     * Entrada para los paneles
-     * @return Entrada en html
-     */
-    public static String entradaPanel() {
-
-        return ("""
-        <li>
-            <a href='http://127.0.0.1:8080/practica/borrar?id=$idEntrada$'>Borrar</a>
-            &nbsp;
-            <a href='http://127.0.0.1:8080/practica/editor?id=$idEntrada$'>Editar</a>
-            
-            &nbsp; &nbsp;&nbsp;
-            $tituloEntrada$
-        </li>
-        
-        """);
-        
-    }
+    
 
     public static String usuarioPanel() {
 
@@ -524,102 +597,21 @@ public class PlantillasHTML {
         """);
         
     }
+    */
+    
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Pagina crear/actualizar entrada
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
 
     /**
-     * Pagina del panel de control
-     * @param titulo Titulo de la pagina pagina 
-     * @param nombreUsuario nombre de usuario de la pagina web
-     * @param entradas Lista de entradas sacadas de la base de datos
-     * @param info info de vuelta de la base de datos
-     * @return HTML de la pagina panel de control
+     * Pagina crear entrada
+     * @param entrada parametro de entrada
+     * @return html formateado
      */
-    public static String paginaPanelControl(String titulo, String nombreUsuario, List<Entrada> entradas, List<String> usuarios, Optional<String> info) {
-
-        ST template = new ST (plantillaBasePaginaWeb(), '$', '$');
-
-        StringBuffer buffer = new StringBuffer();
-        
-        buffer.append(formCambiarPassword(info));
-        buffer.append(entradasPanelControl(entradas));
-
-        if (usuarios != null) {
-            buffer.append(usuariosPanelControl(usuarios));
-        }
-
-
-        template.add("cuerpo", buffer.toString());
-        template.add("titulo", titulo);
-        template.add("nombreUsuario", nombreUsuario);
-
-        return template.render().toString();
-    }
-
-    private static String usuariosPanelControl(List<String> usuarios) {
-
-        StringBuffer buffer = new StringBuffer();
-
-        buffer.append("""
-        
-        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
-
-            <header class='w3-container w3-pink'>
-                <h1>Usuarios</h1>
-            </header>
-
-            <div class='w3-container w3-margin-top'>
-                <ul class='w3-ul w3-hoverable w3-margin-bottom'>
-        """);
-
-        usuarios.removeIf(u -> u.equals("admin"));
-
-        for (String s : usuarios) {
-            ST template = new ST (usuarioPanel(), '$', '$');
-
-            template.add("nombreUsuario", s);
-
-            buffer.append(template.render().toString());
-
-        }
-
-        buffer.append("</ul></div></div>");
-
-        return buffer.toString();
-    }
-
-    public static String paginaRegistro(String titulo, String nombreUsuario, Optional<String> mensaje) {
-        ST template = new ST (plantillaBasePaginaWeb(), '$', '$');
-
-        template.add("cuerpo", formRegistro(mensaje));
-        template.add("titulo", titulo);
-        template.add("nombreUsuario", nombreUsuario);
-
-        return template.render().toString();
-    }
-
-    public static String paginaCrearEntrada(String titulo, String nombreUsuario) {
-
-        ST template = new ST (plantillaBasePaginaWeb(), '$', '$');  
-
-        template.add("cuerpo", crearEntrada(null));
-        template.add("titulo", titulo);
-        template.add("nombreUsuario", nombreUsuario);
-
-        return template.render().toString();
-    }
-
-    public static String paginaActualizarEntrada(Entrada e, String titulo, String nombreUsuario) {
-
-        ST template = new ST (plantillaBasePaginaWeb(), '$', '$');  
-
-        template.add("cuerpo", crearEntrada(e));
-        template.add("titulo", titulo);
-        template.add("nombreUsuario", nombreUsuario);
-
-        return template.render().toString();
-    }
-
-    
-
     private static String crearEntrada(Entrada entrada) {
 
         ST template = new ST ("""
@@ -647,6 +639,7 @@ public class PlantillasHTML {
         """, '$','$');
 
         if (entrada == null) {
+            template.add("id", "");
             template.add("titulo", "");
             template.add("fecha", "");
             template.add("texto", "");
@@ -666,23 +659,212 @@ public class PlantillasHTML {
         return template.render().toString();
     }
 
-    
 
     /**
-     * Quita los caracteres especiales de los string
-     * @param str string al que hay que quitarle los parametros especiales
-     * @return String sin los parametros especiales
+     * Crear pagina de entrada
+     * @param titulo Titulo de la pagina web 
+     * @param nombreUsuario Nombre de usuario de la pagina web
+     * @return Pagina de crear entrada formateada
+     */
+    public static String paginaCrearEntrada(String titulo, String nombreUsuario) {
+
+        ST template = new ST (PLANTILLA_BASE, '$', '$');  
+
+        template.add("cuerpo", crearEntrada(null));
+        template.add("titulo", titulo);
+        template.add("nombreUsuario", nombreUsuario);
+
+        return template.render().toString();
+    }
+
+    /**
+     * Pagina a actualizar
+     * @param e entrada a actualizar
+     * @param titulo titulo de la pagina web
+     * @param nombreUsuario nombre de usuario del usuario en cuestion
+     * @return pagina formateada
+     */
+    public static String paginaActualizarEntrada(Entrada e, String titulo, String nombreUsuario) {
+
+        ST template = new ST (PLANTILLA_BASE, '$', '$');  
+
+        template.add("cuerpo", crearEntrada(e));
+        template.add("titulo", titulo);
+        template.add("nombreUsuario", nombreUsuario);
+
+        return template.render().toString();
+    }
+
+    /**
+     * Funcion para extraer caracteres no deseados de una cadena 
+     * @param str cadena a tratar
+     * @return cadena tratada
      */
     private static String extraerCaracteres(String str) {
         
-        str.replaceAll("&", "&amp;");
-        str.replaceAll("<", "&gt;");
-        str.replaceAll(">", "&lt;");
-        str.replaceAll("'", "&#039;");
-        str.replaceAll("\"", "&#034;");
+        str = str.replaceAll("&", "&amp;");
+        str = str.replaceAll(">", "&gt;");
+        str = str.replaceAll("<", "&lt;");
+        str = str.replaceAll("'", "&#039;");
+        str = str.replaceAll("\"", "&#034;");
 
         return str;
     }
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Pagina de manejo de usuarios
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    /**
+     * Pagina de manejo de usuarios
+     * @param usuarios Usuarios a tratar
+     * @return pagina de manejo de usuarios formateada
+     */
+    public static String paginaManejoUsuario(List<Usuario> usuarios) {
+        ST template = new ST (PLANTILLA_BASE, '$', '$');
+
+        template.add("titulo", "Blog - Manejo de usuarios");
+        template.add("nombreUsuario", "admin");
+        template.add("cuerpo",  usuariosPaginaManejo (usuarios));
+
+
+
+
+        return template.render().toString();
+    }
+
+    /**
+     * Tratamiento de usuarios
+     * @param usuarios usuarios a tratar
+     * @return usuarios tratados 
+     */
+    private static String usuariosPaginaManejo(List<Usuario> usuarios) {
+
+        ST template = new ST ("""
+        <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-white w3-animate-top'>
+
+            <header class='w3-container w3-pink'>
+                <h1>Administraci&oacute;n de usuarios</h1>
+            </header>
+
+            <div class='w3-container w3-margin-top'>
+
+                <form class='w3-container' style='width: 60%; margin: 0 auto' method='post' action='registro'>
+                    <button class='w3-btn w3-round-large w3-pink w3-margin-top w3-margin-bottom' style='margin-left: 30%; width: 40%'>Registrar usuario</button>
+                </form>
+
+                <ul class='w3-ul w3-hoverable w3-margin-bottom w3-centered'>
+                    $usuarios$
+                </ul>
+            </div>
+
+        </div>
+        """, '$','$');
+
+        template.add("usuarios", manejoUsuarios (usuarios));
+
+        return template.render().toString();
+    }
+
+    /**
+     * Manejo de usuarios
+     * @param usuarios usuarios
+     * @return String con los usuarios a tratar
+     */
+    private static String  manejoUsuarios(List<Usuario> usuarios) {
+
+        StringBuffer buffer = new StringBuffer();
+
+        for (Usuario usuario : usuarios) {
+            ST template = new ST ("""
+            <li>
+                    
+                <form class='d-flex w3-margin-left w3-margin-right w3-padding-32' action='actualizarusuario' method='post'>
+                    <input type='hidden' name='nombreUsuario' value='$nombreUsuario$' />
+                    <a href='http://127.0.0.1:8080/practica/borrarusuario?nombreUsuario=$nombreUsuario$'>Borrar</a>
+                    
+                    <p class='w3-margin-left w3-margin-right'>$nombreUsuario$</p>
+                    <input class='form-control me-2  w3-margin-left' type='text' placeholder='Contrase&ntilde;a' style='width: 30%' value='' name='password'>
+                    <input class='form-control me-2  w3-margin-left' type='text' placeholder='Repetir contrase&ntilde;a' style='width: 30%' value='' name='password2'>
+                    <button class='btn btn-primary'>Actualizar</button>
+                </form>
+
+            </li>
+            """, '$','$');
+
+            template.add("nombreUsuario", usuario.getUsuario());
+
+            //Al codificarla via MD5, para mostrarla hay que desencriptarla y no se puede.
+            //template.add("password", usuario.getPassword());
+
+            buffer.append(template.render().toString());
+
+
+        }
+
+
+        return buffer.toString();
+    }
+
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //Pagina del instalador
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    /**
+     * Pagina del instalador
+     */
+    public static String paginaInstalador() {
+        return 
+        """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset='utf-8'>
+                <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+                <title>Instalador</title>
+                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                <style>
+                    html {
+                        background-color: #5c5c5c;
+                    }
+                    #size{
+                        text-align: center;
+                        margin-left: 25%;
+                        margin-right: 25%;
+                        margin-top: 5%;
+                        background-color: #FFFFFF;
+                    }
+                </style>
+                <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>
+                <link rel='icon' href='imagenes/logo.png'>
+            </head>
+            <body>
+                <div id='size' class='container w3-card-4 w3-animate-opacity' >
+                    <h1>Instalador</h1>
+                    <img src='imagenes/fotoInstaller.png'></img>
+                    <div class='w3-container w3-center'>
+                        <form action='instalador' method='get'>
+                            <input type='hidden' name='pulsado' value='pulsado'>
+                            <button class='w3-btn w3-red '>Instalar aplicacion</button>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </body>
+        </html>
+        """;
+    }
+
+
 }
 
 

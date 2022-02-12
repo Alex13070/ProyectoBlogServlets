@@ -30,7 +30,7 @@ public class Registro extends HttpServlet {
                     if (stringValido (nombreUsuario) && stringValido (password)) {
                         Usuario usuario = Usuario.builder().usuario(nombreUsuario).password(password).build();
                         db.crearUsuario(usuario);
-                        resp.sendRedirect(req.getContextPath() + "/iniciosesion");
+                        resp.sendRedirect(req.getContextPath() + "/administracionusuarios");
                     }
                     else
                         mensaje = Optional.of("Usuario o contrase&ntilde;a contienen caracteres inadecuados");
